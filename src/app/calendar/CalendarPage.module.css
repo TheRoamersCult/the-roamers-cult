@@ -1,0 +1,543 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@800;900&family=Playfair+Display:ital,wght@0,600;1,500&family=Plus+Jakarta+Sans:wght@700;800&display=swap");
+
+.viewport {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: #080706;
+  color: #2a2017;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.ambientBackground {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(circle at 50% 50%, #14100d 0%, #020202 100%);
+  pointer-events: none;
+}
+
+.topographicLines {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 0c16.568 0 30 13.432 30 30S46.568 60 30 60 0 46.568 0 30 13.432 0 30 0zm0 3C15.088 3 3 15.088 3 30s12.088 27 27 27 27-12.088 27-27S44.912 3 30 3z' fill='%23bfa15f' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.mapWorkspace {
+  position: relative;
+  z-index: 10;
+  flex: 1;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 120px 24px 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  gap: 24px;
+}
+
+.legendHeader {
+  display: flex;
+  gap: 20px;
+  background: rgba(22, 17, 14, 0.6);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(223, 212, 196, 0.06);
+  backdrop-filter: blur(8px);
+}
+
+.legendIndicator {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.upcomingWaveRing {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #bd9e5f;
+  position: relative;
+}
+
+.upcomingWaveRing::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid rgba(189, 158, 95, 0.6);
+  animation: radarRipple 1.6s infinite linear;
+}
+
+@keyframes radarRipple {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.memorySolidFrame {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  border: 1px solid #85221a;
+}
+
+.legendLabel {
+  font-family: "Cinzel", serif;
+  font-size: 0.52rem;
+  font-weight: 900;
+  color: #dfd4c4;
+  letter-spacing: 0.5px;
+}
+
+.mapScrollContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 10px 1.05fr;
+  background: #ded3c3;
+  border-radius: 2px;
+  box-shadow: 0 30px 75px rgba(0, 0, 0, 0.7);
+  border: 6px solid #17120f;
+  position: relative;
+}
+
+.leftParchment {
+  background: linear-gradient(to right, #d3c7a4 0%, #ded3c3 100%);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.agedFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #090807;
+  padding: 0;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.6);
+  overflow: hidden;
+  border: 1px solid rgba(42, 32, 23, 0.15);
+  display: block;
+}
+
+.discoveryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vignetteBurn {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.4);
+  pointer-events: none;
+}
+
+.dispatchBlock {
+  border-top: 1px dashed rgba(42, 32, 23, 0.12);
+  padding-top: 12px;
+  width: 100%;
+}
+
+.inkStamp {
+  font-family: "Cinzel", serif;
+  font-size: 0.5rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #85221a;
+  border: 1px solid #85221a;
+  padding: 1px 4px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.cursiveInkText {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 0.88rem;
+  font-style: italic;
+  line-height: 1.45;
+  color: #32281d;
+}
+
+.spineCrease {
+  background: linear-gradient(to right, #948773 0%, #32281d 50%, #948773 100__);
+}
+
+.stitchLine {
+  width: 1px;
+  height: 100%;
+  border-left: 1px dashed rgba(255,255,255,0.06);
+}
+
+.rightParchment {
+  background: linear-gradient(to left, #d3c7a4 0%, #ded3c3 100__);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.mapControllerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(42, 32, 23, 0.1);
+  padding-bottom: 8px;
+}
+
+.titleWrapper {
+  position: relative;
+  overflow: hidden;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.journalTitle {
+  margin: 0;
+  font-family: "Cinzel", serif;
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #17120f;
+}
+
+.goldYearAccent {
+  color: #a3823e;
+}
+
+.navCompassBtn {
+  background: transparent;
+  border: none;
+  font-family: "Cinzel", serif;
+  font-size: 0.55rem;
+  font-weight: 900;
+  color: #473a2a;
+  cursor: pointer;
+}
+
+.gridMatrixLayout {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  width: 100%;
+}
+
+.dayLabelInk {
+  font-family: "Cinzel", serif;
+  font-size: 0.5rem;
+  font-weight: 900;
+  color: rgba(42, 32, 23, 0.45);
+  text-align: center;
+  padding-bottom: 4px;
+}
+
+.matrixGridSquare, .lostCoordinatesCell {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Cinzel", serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: rgba(42, 32, 23, 0.2);
+  position: relative;
+}
+
+.matrixGridSquare {
+  border: 1px solid rgba(42, 32, 23, 0.03);
+}
+
+.passiveDayText {
+  position: relative;
+}
+
+.upcomingRouteSquare {
+  border: 1px solid #a3823e;
+  cursor: pointer;
+  animation: activeGlowBreathe 2.4s infinite ease-in-out;
+}
+
+.upcomingAuraPulseEffect {
+  position: absolute;
+  inset: 0;
+  background: rgba(163, 130, 62, 0.12);
+  z-index: 2;
+}
+
+.topographicRadarGlowRing {
+  position: absolute;
+  inset: 2px;
+  border: 1px solid rgba(163, 130, 62, 0.4);
+  z-index: 3;
+}
+
+@keyframes activeGlowBreathe {
+  0% { box-shadow: inset 0 0 4px rgba(163, 130, 62, 0.2); border-color: rgba(163, 130, 62, 0.7); }
+  50% { box-shadow: inset 0 0 12px rgba(163, 130, 62, 0.4); border-color: rgba(163, 130, 62, 1); }
+  100% { box-shadow: inset 0 0 4px rgba(163, 130, 62, 0.2); border-color: rgba(163, 130, 62, 0.7); }
+}
+
+.memoryRouteSquare {
+  border: 1px solid #85221a;
+  cursor: pointer;
+}
+
+.historicalCornerFrame {
+  position: absolute;
+  inset: 2px;
+  border: 1px solid rgba(133, 34, 26, 0.3);
+  z-index: 3;
+}
+
+.mapThumbWrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.mapThumbAsset {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.02) brightness(0.85) sepia(0.1);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.matrixGridSquare:hover .mapThumbAsset {
+  transform: scale(1.06);
+}
+
+.burntOverlayFilter {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(22, 17, 14, 0.6) 0%, transparent 80%);
+  z-index: 2;
+}
+
+.activeDayIndicatorText {
+  position: absolute;
+  z-index: 4;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 0.78rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.parchmentTelemetryFooter {
+  margin-top: 16px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(42, 32, 23, 0.1);
+  display: flex;
+  justify-content: space-between;
+  font-family: "Cinzel", serif;
+  font-size: 0.45rem;
+  font-weight: 800;
+  color: rgba(42, 32, 23, 0.35);
+}
+
+.nextTourHighlightSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.highlightHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.scoutLine {
+  flex: 1;
+  height: 1px;
+  background: rgba(189, 158, 95, 0.15);
+}
+
+.highlightSectionTitle {
+  font-family: "Cinzel", serif;
+  font-size: 0.65rem;
+  font-weight: 900;
+  color: #bd9e5f;
+  letter-spacing: 1.5px;
+}
+
+.highlightBriefCard {
+  width: 100%;
+  background: rgba(22, 17, 14, 0.45);
+  border: 1px solid rgba(189, 158, 95, 0.1);
+  border-radius: 4px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  animation: highlightSmoothBlink 3s infinite ease-in-out;
+}
+
+@keyframes highlightSmoothBlink {
+  0% { border-color: rgba(189, 158, 95, 0.1); box-shadow: 0 0 0px rgba(189, 158, 95, 0); }
+  50% { border-color: rgba(189, 158, 95, 0.35); box-shadow: 0 0 12px rgba(189, 158, 95, 0.04); }
+  100% { border-color: rgba(189, 158, 95, 0.1); box-shadow: 0 0 0px rgba(189, 158, 95, 0); }
+}
+
+.highlightBriefCard:hover {
+  background: rgba(31, 24, 20, 0.6);
+  border-color: rgba(189, 158, 95, 0.4) !important;
+}
+
+.highlightBadgeBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-shrink: 0;
+  border-right: 1px solid rgba(223, 212, 196, 0.08);
+  padding-right: 24px;
+}
+
+.chronoTagLabel {
+  font-family: "Cinzel", serif;
+  font-size: 0.52rem;
+  font-weight: 900;
+  color: rgba(223, 212, 196, 0.4);
+}
+
+.chronoTagValue {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #bd9e5f;
+}
+
+.highlightMetaBlock {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.highlightRouteTitle {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #dfd4c4;
+}
+
+.highlightRouteDesc {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: rgba(223, 212, 196, 0.55);
+}
+
+.highlightActionCircle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(189, 158, 95, 0.08);
+  color: #bd9e5f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.highlightBriefCard:hover .highlightActionCircle {
+  background: #bd9e5f;
+  color: #17120f;
+  transform: translateX(3px);
+}
+
+@media (max-width: 820px) {
+  .mapWorkspace {
+    padding-top: 100px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .mapScrollContainer {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    border: 5px solid #1a1410;
+  }
+  .leftParchment {
+    padding: 16px 16px 20px 16px;
+    border-bottom: 2px dashed rgba(42, 32, 23, 0.15);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .spineCrease {
+    display: none;
+  }
+  .rightParchment {
+    padding: 20px 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .agedFrame {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+  }
+  .highlightBriefCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px;
+  }
+  .highlightBadgeBlock {
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px dashed rgba(223, 212, 196, 0.1);
+    padding-bottom: 8px;
+    width: 100%;
+  }
+  .highlightActionCircle {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .mapWorkspace {
+    padding-top: 92px;
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 16px;
+  }
+  .legendHeader {
+    gap: 12px;
+    padding: 4px 10px;
+  }
+  .leftParchment, .rightParchment {
+    padding: 14px 10px;
+  }
+  .gridMatrixLayout {
+    gap: 3px;
+  }
+  .matrixGridSquare, .lostCoordinatesCell {
+    font-size: 0.68rem;
+  }
+}

@@ -1,0 +1,18 @@
+.section { padding: 5rem 5%; max-width: 1300px; margin: 0 auto; }
+.heading { font-size: 2.5rem; font-weight: 800; margin-bottom: 3rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.imgDiv { height: 250px; background: #e2e8f0; }
+.cardBody { padding: 2rem; }
+.cardBody h3 { margin-bottom: 0.5rem; font-size: 1.4rem; }
+.cardBtn {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--cult-green);
+  color: var(--cult-cream);
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}

@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap");
+
+.matrixViewport {
+  position: relative;
+  width: 100%;
+  background: #040504;
+  padding: 80px 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.jungleGridMesh {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(13, 22, 13, 0.22) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.matrixContainer {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.controlPanel {
+  display: flex;
+  flex-direction: column;
+}
+
+.artifactBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Cinzel", serif;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  color: #d4af37;
+  margin-bottom: 14px;
+}
+
+.goldNode {
+  width: 5px;
+  height: 5px;
+  background: #d4af37;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #d4af37;
+}
+
+.panelTitle {
+  margin: 0 0 16px 0;
+  font-family: "Cinzel", serif;
+  font-size: 2.1rem;
+  font-weight: 900;
+  line-height: 1.15;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.goldText {
+  color: #d4af37;
+  text-shadow: 0 0 25px rgba(212, 175, 55, 0.15);
+}
+
+.panelParagraph {
+  margin: 0 0 32px 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.statsMicroRow {
+  display: flex;
+  gap: 12px;
+}
+
+.microStat {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  padding: 12px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.microStat:hover {
+  background: rgba(212, 175, 55, 0.03);
+  border-color: rgba(212, 175, 55, 0.2);
+}
+
+.microStat span {
+  display: block;
+  font-family: "Cinzel", serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.microStat label {
+  display: block;
+  margin-top: 3px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.terminalDisplay {
+  background: #090b09;
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.terminalHeader {
+  background: rgba(255, 255, 255, 0.01);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.terminalDots {
+  display: flex;
+  gap: 5px;
+}
+
+.terminalDots span {
+  width: 4.5px;
+  height: 4.5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.terminalLabel {
+  font-family: "Cinzel", serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: rgba(212, 175, 55, 0.4);
+}
+
+.mosaicGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 160px 115px;
+  gap: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.mosaicCell {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.mosaicCell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(85%) brightness(70%) contrast(115%);
+  transition: all 0.4s ease;
+}
+
+.cellWide {
+  grid-column: span 2;
+}
+
+.cellShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 65%, rgba(4, 5, 4, 0.85) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 12px 16px;
+  box-sizing: border-box;
+}
+
+.cellShade span {
+  font-family: "Cinzel", serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.accessBar {
+  position: relative;
+  background: rgba(212, 175, 55, 0.02);
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.accessGlowLayer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.accessText {
+  font-family: "Cinzel", serif;
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #d4af37;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.accessIcon {
+  display: flex;
+  align-items: center;
+  color: #d4af37;
+  z-index: 2;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.terminalDisplay:hover {
+  border-color: #d4af37;
+  transform: translateY(-4px);
+  box-shadow: 0 45px 95px rgba(212, 175, 55, 0.1);
+}
+
+.terminalDisplay:hover .mosaicCell img {
+  filter: grayscale(10%) brightness(85%) contrast(100%);
+  transform: scale(1.02);
+}
+
+.terminalDisplay:hover .accessBar {
+  background: #d4af37;
+  border-top-color: #d4af37;
+}
+
+.terminalDisplay:hover .accessGlowLayer {
+  transform: translateX(100%);
+}
+
+.terminalDisplay:hover .accessText {
+  color: #040504;
+}
+
+.terminalDisplay:hover .accessIcon {
+  color: #040504;
+  transform: translateX(5px);
+}
+
+@media (max-width: 1024px) {
+  .matrixContainer {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    max-width: 580px;
+  }
+}
+
+@media (max-width: 600px) {
+  .matrixViewport {
+    padding: 60px 16px;
+  }
+  .panelTitle {
+    font-size: 1.85rem;
+  }
+  .mosaicGrid {
+    grid-template-rows: 135px 100px;
+    padding: 12px;
+    gap: 10px;
+  }
+  .accessBar {
+    padding: 15px;
+  }
+  .accessText {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+  }
+}
