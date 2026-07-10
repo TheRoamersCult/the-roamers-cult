@@ -1,0 +1,46 @@
+/* Desktop: Sidebar static dikhega */
+.sidebar { 
+  width: 250px; 
+  height: 100vh; 
+  background: #0a0a0a; 
+  position: fixed; 
+  top: 0; left: 0; 
+  z-index: 1000; 
+  border-right: 1px solid #222; 
+  display: flex; 
+  flex-direction: column; 
+  
+}
+
+.navLinks { flex-grow: 1; margin-top: 20px; }
+.bottomLogout { padding: 25px; border-top: 1px solid #222; }
+.logoutBtn { width: 100%; padding: 12px; background: #d4af37; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+
+
+.midHamburger { display: none; } /* Desktop par hide */
+
+.logo { 
+  color: #d4af37; 
+  padding: 25px; 
+  font-weight: bold; 
+  border-bottom: 1px solid #222; 
+  margin-top: 70px;
+}
+.navItem { padding: 15px 25px; cursor: pointer; color: #fff; transition: 0.3s; }
+.navItem:hover { background: #1a1a1a; color: #d4af37; }
+
+/* Mobile/Tablet: Drawer Logic */
+@media (max-width: 768px) {
+  .sidebar { left: -250px; transition: 0.3s ease; } /* Hidden by default */
+  .sidebar.open { left: 0; } /* Drawer Slide-in */
+  
+  .midHamburger { 
+    display: block; position: fixed; top: 50%; left: 0; transform: translateY(-50%);
+    z-index: 1001; background: #d4af37; border: none; padding: 12px; 
+    border-radius: 0 8px 8px 0; cursor: pointer; color: #000;
+  }
+  .overlay { 
+    display: block; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.7); z-index: 999; 
+  }
+}

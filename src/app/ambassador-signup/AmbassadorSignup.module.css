@@ -1,0 +1,23 @@
+.container { 
+  display: flex; justify-content: center; align-items: center; 
+  min-height: 100vh; background: #050505; padding: 20px; 
+}
+.formWrapper { 
+  width: 100%; max-width: 450px; background: #0a0a0a; 
+  padding: 30px; border-radius: 12px; border: 1px solid #222;
+}
+.title { color: #d4af37; margin-bottom: 25px; text-align: center; font-size: 1.5rem; }
+.inputField { 
+  display: block; width: 100%; padding: 12px; margin-bottom: 15px; 
+  background: #111; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;
+}
+/* Select dropdown ke liye specific focus styling */
+.inputField:focus { outline: none; border-color: #d4af37; }
+.submitBtn { 
+  width: 100%; padding: 14px; background: #d4af37; border: none; 
+  border-radius: 6px; font-weight: bold; cursor: pointer; color: #000;
+}
+@media (max-width: 480px) {
+  .formWrapper { padding: 20px; }
+  .title { font-size: 1.2rem; }
+}

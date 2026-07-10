@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background: #050a07;
+  color: #f4ece0;
+}
+
+.sidebar {
+  width: 250px;
+  background: #0e1611;
+  padding: 40px 20px;
+  border-right: 1px solid #d4af37;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 { color: #d4af37; margin-bottom: 40px; }
+
+.logoutBtn {
+  margin-top: auto;
+  background: #ff5555;
+  border: none;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 60px;
+}
+
+.profileCard {
+  background: #0e1611;
+  padding: 30px;
+  border: 1px solid #d4af37;
+  border-radius: 8px;
+  max-width: 500px;
+}
