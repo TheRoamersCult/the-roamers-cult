@@ -33,364 +33,2740 @@ body */
     padding:90px 0;
 }
 
-/* ===========================
-   HERO
-=========================== */
 
-.hero{
+
+
+/*=========================================================
+ HERO SECTION (PART 1)
+ Container + Left Side + Buttons + Stats
+=========================================================*/
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
+.hero {
+  width: min(1200px, 94%);
+  margin: 60px auto 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  padding: 20px;
+  background-color: #2d3a3354;
+  border-radius: 30px;
+}
+
+/* =========================================================
+   LEFT SIDE CONTENT
+========================================================= */
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.heroContent h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  font-weight: 800;
+  color: #DED9BE;
+}
+
+.heroContent h1 span {
+  display: block;
+  margin-top: 5px;
+  color: #2D3A33;
+}
+
+.heroInfo {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+  color: #d6d6d6;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.heroText {
+  max-width: 500px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #bfbfbf;
+  margin-bottom: 25px;
+}
+
+/* Stats Section */
+.heroStats {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.statCard {
+  padding: 15px 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.statCard h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #7ED957;
+}
+
+.statCard span {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+/* Buttons */
+.heroButtons {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+}
+
+.heroButtons .bookBtn, .heroButtons .callBtn {
+  flex: 1;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.heroButtons .bookBtn { background: #DED9BE; color: #111; }
+.heroButtons .callBtn { border: 1px solid #444; color: #fff; background: rgba(255,255,255,0.05); }
+
+/* =========================================================
+   RIGHT SIDE (IMAGE BOX)
+========================================================= */
+.heroImageBox {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.heroImage { object-fit: cover; }
+
+/* Floating Elements */
+.floatingBadge1, .floatingBadge2, .floatingBadge3 {
+  position: absolute;
+  z-index: 5;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: #DED9BE;
+  color: #111;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  animation: float 4s ease-in-out infinite;
+}
+
+.floatingBadge1 { top: 20px; left: 20px; }
+.floatingBadge2 { top: 20px; right: 20px; animation-delay: 0.5s; }
+.floatingBadge3 { bottom: 20px; right: 20px; animation-delay: 1s; }
+
+/* Glass Card */
+.heroCard {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 85%;
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(16, 16, 16, 0);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.heroCard h3 { margin: 5px 0; font-size: 1.1rem; }
+.heroCard p { font-size: 0.8rem; line-height: 1.4; opacity: 0.8; margin: 0 0 15px; }
+
+.cardBottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+.cardItem { background: rgba(0,0,0,0.2); padding: 8px; border-radius: 10px; text-align: center; }
+.cardItem strong { display: block; font-size: 0.85rem; }
+.cardItem span { font-size: 0.65rem; color: #ccc; }
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+@media (max-width: 992px) {
+  .hero { grid-template-columns: 1fr; text-align: center; }
+  .heroContent { align-items: center; order: 2; }
+  .heroImageBox { order: 1; max-height: 400px; }
+  /* .heroButtons { justify-content: center; } */
+}
+
+@media (max-width: 576px) {
+  .hero { 
+    margin: 30px auto; 
+    margin-top: 50px;
+    padding: 15px; }
+  .heroContent h1 { font-size: 1.8rem; }
+  .heroStats { justify-content: center; }
+  .statCard { padding: 10px 15px; }
+  .heroButtons { 
+    /* flex-direction: column;  */
+    gap: 10px;
+}
+
+  .heroCard { display: none; } 
+.heroCard {
+  position: absolute;
+  left: 10px;
+  margin: 0 10px;
+  bottom: 20px;
+  width: 80%;
+  height: 100px;
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(16, 16, 16, 0);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+.heroCard h3 { 
+    margin: 5px 0; 
+    font-size: 10px; }
+.heroCard p { 
+    font-size: 8px; 
+    line-height: 1.4; 
+    opacity: 0.8; 
+    margin: 0 0 15px; 
+}
+  
+.cardBottom { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 5px; 
+}
+
+.cardItem { 
+    background: rgba(0,0,0,0.2); 
+    padding: 8px; 
+    border-radius: 10px; 
+    text-align: center; 
+}
+
+.cardItem strong { 
+    display: block; 
+    font-size: 0.85rem; 
+}
+
+.cardItem span { 
+    font-size: 0.65rem; 
+    color: #ccc; 
+}
+
+/* .heroButtons .bookBtn, .heroButtons .callBtn {
+  flex: 1;
+  height: 58px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-right: 50px;
+  margin-left: 50px;
+} */
+
+}
+
+
+@media (max-width: 400px) {
+    /* .bookBtn, .callBtn {
+  flex: 1;
+  height: 48px;
+  margin-right: 20px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+} */
+
+
+}
+
+
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.heroContent > * { animation: fadeUp 0.8s ease both; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=========================================================
+BATCH SECTION
+=========================================================*/
+
+.batchSection{
     position:relative;
-    height:100vh;
-    min-height:700px;
-    display:flex;
+    width:min(1180px,94%);
+    margin:60px auto;
+    padding:38px 28px;
+    overflow:hidden;
+    border-radius:24px;
+    background-color: #2d3a3342;
+    /* background:
+    linear-gradient(
+    135deg,
+    #101612 0%,
+    #18211b 50%,
+    #101612 100%); */
+    border:1px solid rgba(255,255,255,.07);
+    box-shadow:
+    0 18px 45px rgba(0,0,0,.28);
+}
+
+/*=========================================================
+BACKGROUND
+=========================================================*/
+
+.batchBg1{
+    position:absolute;
+    top:-120px;
+    right:-100px;
+    width:280px;
+    height:280px;
+    border-radius:50%;
+    background:
+    radial-gradient(circle,
+    rgba(212,175,55,.10),
+    transparent 72%);
+}
+
+.batchBg2{
+    position:absolute;
+    bottom:-120px;
+    left:-90px;
+    width:230px;
+    height:230px;
+    border-radius:50%;
+    background:
+    radial-gradient(circle,
+    rgba(70,170,100,.15),
+    transparent 72%);
+}
+
+/*=========================================================
+HEADING
+=========================================================*/
+
+.batchHeading{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 30px;
+}
+
+.batchSubtitle{
+    display:inline-flex;
     align-items:center;
     justify-content:center;
-    text-align:center;
-    overflow:hidden;
-}
-
-.heroImage{
-    object-fit:cover;
-    z-index:1;
-}
-
-.overlay{
-    position:absolute;
-    inset:0;
-    background:
-    linear-gradient(to bottom,
-    rgba(0,0,0,.55),
-    rgba(0,0,0,.75),
-    rgba(5,5,5,1));
-    z-index:2;
-}
-
-.heroContent{
-    position:relative;
-    z-index:5;
-    width:min(850px,90%);
-}
-
-.badge{
-    display:inline-block;
-    padding:10px 24px;
-    border:1px solid #d4af37;
-    color:#d4af37;
-    border-radius:100px;
-    margin-bottom:25px;
-    font-size:.9rem;
-    letter-spacing:2px;
+    padding:7px 15px;
+    border-radius:30px;
+    background:rgba(212,175,55,.10);
+    border:1px solid rgba(212,175,55,.25);
+    color:#DED9BE;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1px;
     text-transform:uppercase;
 }
 
-.hero h1{
-    font-size:4.3rem;
+.batchHeading h2{
+    margin-top:14px;
+    color:#fff;
+    font-size:34px;
     font-weight:800;
-    line-height:1.1;
-    margin-bottom:18px;
+    line-height:1.15;
 }
 
-.hero p{
-    font-size:1.2rem;
-    color:#ddd;
+.batchHeading h2 span{
+    color:#DED9BE;
 }
 
-.heroText{
-    max-width:760px;
-    margin:30px auto;
-    line-height:1.9;
-    color:#bfbfbf;
+.batchHeading p{
+    margin-top:12px;
+    color:#c6cec7;
+    font-size:14px;
+    line-height:1.7;
 }
 
-/* ===========================
-   BUTTONS
-=========================== */
-
-.heroButtons{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-    margin-top:45px;
-}
-
-.bookBtn{
-    background:#d4af37;
-    color:#000;
-    padding:16px 38px;
-    border-radius:12px;
-    text-decoration:none;
-    font-weight:700;
-    transition:.35s;
-}
-
-.bookBtn:hover{
-    transform:translateY(-5px);
-    box-shadow:0 20px 45px rgba(212,175,55,.35);
-}
-
-.callBtn{
-    padding:16px 38px;
-    border:2px solid #d4af37;
-    color:#d4af37;
-    border-radius:12px;
-    text-decoration:none;
-    font-weight:600;
-    transition:.35s;
-}
-
-.callBtn:hover{
-    background:#d4af37;
-    color:#000;
-}
-
-/* ===========================
-   TITLE
-=========================== */
-
-.titleBox{
-    text-align:center;
-    margin-bottom:60px;
-}
-
-.titleBox span{
-    color:#d4af37;
-    font-size:.9rem;
-    text-transform:uppercase;
-    letter-spacing:3px;
-}
-
-.titleBox h2{
-    margin-top:15px;
-    font-size:2.8rem;
-    font-weight:700;
-}
-
-/* ===========================
-   BATCH GRID
-=========================== */
+/*=========================================================
+GRID
+=========================================================*/
 
 .batchGrid{
+    position:relative;
+    z-index:2;
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
 }
 
+/*=========================================================
+CARD
+=========================================================*/
+
 .batchCard{
-    background:#0d0d0d;
-    border:1px solid #222;
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:14px;
     border-radius:18px;
-    text-align:center;
-    padding:35px;
-    transition:.4s;
+    background:#2d3a3345;
+    border:1px solid #2D3A33;
+    transition:.35s;
+    backdrop-filter:blur(8px);
 }
 
 .batchCard:hover{
-    transform:translateY(-8px);
-    border-color:#d4af37;
+    transform:translateY(-4px);
+    border-color:#2D3A33;
+    box-shadow:
+    0 12px 28px #2D3A33;
 }
 
-.batchCard h3{
-    color:#d4af37;
-    margin-bottom:10px;
+/*=========================================================
+POPULAR
+=========================================================*/
+
+.popular{
+    border-color:rgba(212,175,55,.25);
 }
 
-.batchCard p{
-    color:#cfcfcf;
+.popularTag{
+    position:absolute;
+    top:10px;
+    right:10px;
+    padding:5px 10px;
+    border-radius:30px;
+    background:#d4af37;
+    color:#111;
+    font-size:10px;
+    font-weight:700;
+    z-index:3;
 }
+
+/*=========================================================
+DATE BOX
+=========================================================*/
+
+.dateBox{
+    width:74px;
+    min-width:74px;
+    height:84px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    border-radius:14px;
+    background:
+    linear-gradient(
+    180deg,
+    #DED9BE,
+    #DED9BE);
+    color:#111;
+    box-shadow:
+    0 10px 22px rgba(212,175,55,.20);
+}
+
+.month{
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.dateBox h3{
+    margin:3px 0;
+    font-size:26px;
+    line-height:1;
+    font-weight:800;
+}
+
+.dateBox small{
+    font-size:10px;
+    font-weight:600;
+}
+
+/*=========================================================
+CONTENT
+=========================================================*/
+
+.batchContent{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+/*=========================================================
+TOP
+=========================================================*/
+
+.topRow{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+}
+
+.topRow h4{
+    color:#fff;
+    font-size:17px;
+    font-weight:700;
+    margin-bottom:4px;
+}
+
+.topRow p{
+    color:#b8c2b8;
+    font-size:12px;
+}
+
+.priceBox{
+    white-space:nowrap;
+    padding:8px 12px;
+    border-radius:10px;
+    background:#DED9BE;
+    color:#111;
+    font-size:14px;
+    font-weight:800;
+}
+
+/*=========================================================
+INFO
+=========================================================*/
+
+.infoRow{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+}
+
+.infoRow span{
+    padding:5px 10px;
+    border-radius:20px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.06);
+    color:#d9dfd9;
+    font-size:11px;
+    white-space:nowrap;
+}
+
+/*=========================================================
+BOTTOM
+=========================================================*/
+
+.bottomRow{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:2px;
+}
+
+.seats{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    color:#fff;
+    font-size:12px;
+}
+
+.dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#2fd46d;
+    box-shadow:
+    0 0 10px rgba(47,212,109,.8);
+}
+
+.batchSection .bookBtn{
+    border:none;
+    cursor:pointer;
+    padding:9px 15px;
+    border-radius:10px;
+    background:
+    linear-gradient(
+    135deg,
+    #DED9BE,
+    #DED9BE);
+    color:#111;
+    font-size:12px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.batchSection .bookBtn:hover{
+    transform:translateY(-2px);
+}
+
+/*=========================================================
+LAPTOP
+=========================================================*/
+
+@media (max-width:1200px){
+
+.batchSection{
+    width:min(96%,1180px);
+    padding:34px 22px;
+}
+
+.batchHeading h2{
+    font-size:30px;
+}
+
+.batchGrid{
+    gap:12px;
+}
+
+.batchCard{
+    padding:12px;
+}
+
+.dateBox{
+    width:68px;
+    min-width:68px;
+    height:78px;
+}
+
+.dateBox h3{
+    font-size:24px;
+}
+
+.topRow h4{
+    font-size:15px;
+}
+
+.priceBox{
+    font-size:13px;
+}
+
+.infoRow span{
+    font-size:10px;
+    padding:5px 8px;
+}
+
+.batchSection .bookBtn{
+    padding:8px 14px;
+}
+
+}
+
+
+/*=========================================================
+TABLET
+=========================================================*/
+
+@media (max-width:992px){
+
+.batchSection{
+    padding:28px 18px;
+    margin:45px auto;
+}
+
+.batchHeading{
+    margin-bottom:24px;
+}
+
+.batchHeading h2{
+    font-size:27px;
+}
+
+.batchHeading p{
+    font-size:13px;
+}
+
+.batchGrid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+}
+
+.batchCard{
+    padding:10px;
+    gap:10px;
+    border-radius:16px;
+}
+
+.dateBox{
+    width:60px;
+    min-width:60px;
+    height:70px;
+}
+
+.month{
+    font-size:8px;
+}
+
+.dateBox h3{
+    font-size:21px;
+}
+
+.dateBox small{
+    font-size:8px;
+}
+
+.topRow{
+    flex-direction:column;
+    gap:6px;
+}
+
+.topRow h4{
+    font-size:14px;
+}
+
+.topRow p{
+    font-size:11px;
+}
+
+.priceBox{
+    align-self:flex-start;
+    padding:6px 10px;
+    font-size:12px;
+}
+
+.infoRow{
+    gap:5px;
+}
+
+.infoRow span{
+    font-size:9px;
+    padding:4px 7px;
+}
+
+.bottomRow{
+    margin-top:4px;
+}
+
+.seats{
+    font-size:10px;
+}
+
+.batchSection .bookBtn{
+    font-size:10px;
+    padding:7px 10px;
+}
+
+.popularTag{
+    font-size:8px;
+    padding:4px 8px;
+}
+
+}
+
+
+/*=========================================================
+MOBILE
+=========================================================*/
+
+@media (max-width:768px){
+
+.batchSection{
+    width:95%;
+    padding:22px 10px;
+    border-radius:18px;
+    margin:35px auto;
+}
+
+.batchHeading{
+    margin-bottom:18px;
+}
+
+.batchHeading h2{
+    font-size:22px;
+}
+
+.batchHeading p{
+    font-size:12px;
+}
+
+.batchGrid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+}
+
+.batchCard{
+    padding:8px;
+    gap:8px;
+    align-items:flex-start;
+    border-radius:14px;
+}
+
+.popularTag{
+    top:6px;
+    right:6px;
+    font-size:7px;
+    padding:3px 6px;
+}
+
+.dateBox{
+    width:50px;
+    min-width:50px;
+    height:58px;
+    border-radius:10px;
+}
+
+.month{
+    font-size:7px;
+}
+
+.dateBox h3{
+    font-size:17px;
+    margin:2px 0;
+}
+
+.dateBox small{
+    font-size:7px;
+}
+
+.batchContent{
+    gap:6px;
+}
+
+.topRow{
+    gap:5px;
+}
+
+.topRow h4{
+    font-size:12px;
+    line-height:1.3;
+}
+
+.topRow p{
+    display:none;
+}
+
+.priceBox{
+    padding:4px 8px;
+    font-size:10px;
+}
+
+.infoRow{
+    gap:3px;
+}
+
+.infoRow span{
+    font-size:7px;
+    padding:3px 5px;
+}
+
+.bottomRow{
+    margin-top:2px;
+}
+
+.seats{
+    font-size:8px;
+    gap:4px;
+}
+
+.dot{
+    width:6px;
+    height:6px;
+}
+
+.batchSection .bookBtn{
+    padding:6px 8px;
+    font-size:8px;
+    border-radius:8px;
+}
+
+}
+
+
+/*=========================================================
+SMALL MOBILE
+=========================================================*/
+
+@media (max-width:480px){
+
+.batchSection{
+    padding:18px 8px;
+}
+
+.batchGrid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+}
+
+.batchHeading h2{
+    font-size:20px;
+}
+
+.batchHeading p{
+    font-size:11px;
+}
+
+.batchCard{
+    padding:7px;
+    gap:6px;
+}
+
+.dateBox{
+    width:44px;
+    min-width:44px;
+    height:52px;
+}
+
+.month{
+    font-size:6px;
+}
+
+.dateBox h3{
+    font-size:15px;
+}
+
+.dateBox small{
+    font-size:6px;
+}
+
+.topRow h4{
+    font-size:11px;
+}
+
+.priceBox{
+    font-size:7px;
+    padding: 2px 8px;
+}
+
+.infoRow span{
+    font-size:6px;
+    padding:2px 4px;
+}
+
+.seats{
+    font-size:7px;
+}
+
+.batchSection .bookBtn{
+    padding: 3px 5px;
+    font-size:5px;
+}
+
+.popularTag{
+    font-size:6px;
+    padding:2px 5px;
+}
+
+}
+
+
+/*=========================================================
+EXTRA SMALL
+=========================================================*/
+
+@media (max-width:360px){
+
+.batchGrid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+.batchCard{
+    padding:6px;
+}
+
+.dateBox{
+    width:40px;
+    min-width:40px;
+    height:48px;
+}
+
+.dateBox h3{
+    font-size:14px;
+}
+
+.topRow h4{
+    font-size:10px;
+}
+
+.infoRow span{
+    font-size:5.5px;
+}
+
+.batchSection .bookBtn{
+    font-size: 6px;
+    padding: 3px 10px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
 
 /* ===========================
    HIGHLIGHTS
 =========================== */
+/*==========================================
+ TOUR HIGHLIGHTS
+==========================================*/
+
+/*=========================================================
+ TOUR HIGHLIGHTS
+ Premium Responsive Cards
+=========================================================*/
 
 .highlightGrid{
+    width:100%;
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(4,minmax(220px,1fr));
+    gap:18px;
+    margin-top:42px;
+    align-items:stretch;
 }
 
-.highlightCard{
+/*=========================================================
+ CARD
+=========================================================*/
+/*=========================================================
+        PREMIUM TOUR HIGHLIGHTS SECTION
+=========================================================*/
+
+.thSection{
+    position:relative;
+    width:min(1280px,94%);
+    margin:90px auto;
+    overflow:hidden;
+    isolation:isolate;
+}
+
+/*=========================================================
+BACKGROUND
+=========================================================*/
+
+.thBgCircle1,
+.thBgCircle2{
+    position:absolute;
+    border-radius:50%;
+    pointer-events:none;
+    filter:blur(90px);
+    opacity:.16;
+    z-index:-1;
+}
+
+.thBgCircle1{
+    width:260px;
+    height:260px;
+    top:-80px;
+    left:-80px;
+    background:#d4af37;
+}
+
+.thBgCircle2{
+    width:320px;
+    height:320px;
+    right:-120px;
+    bottom:-100px;
+    background:#1f8b63;
+}
+
+/*=========================================================
+HEADING
+=========================================================*/
+
+.thHeading{
+    text-align:center;
+    max-width:760px;
+    margin:0 auto 52px;
+}
+
+.thSubtitle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:9px 18px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#b8860b;
+    background:#fff8e6;
+    border:1px solid rgba(212,175,55,.25);
+}
+
+.thTitle{
+    margin-top:18px;
+    font-size:42px;
+    line-height:1.2;
+    font-weight:800;
+    color:#111827;
+    letter-spacing:-1px;
+}
+
+.thDescription{
+    margin-top:18px;
+    font-size:16px;
+    line-height:1.8;
+    color:#6b7280;
+    max-width:640px;
+    margin-inline:auto;
+}
+
+/*=========================================================
+GRID
+=========================================================*/
+
+.thGrid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:22px;
+}
+
+/*=========================================================
+CARD
+=========================================================*/
+
+.thCard{
+    position:relative;
+    overflow:hidden;
+    height:295px;
+    border-radius:22px;
     background:#111;
-    padding:35px;
-    border-radius:20px;
-    border:1px solid #222;
-    transition:.35s;
+    cursor:pointer;
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease,
+        border-color .45s ease;
+    border:1px solid rgba(255,255,255,.08);
+    isolation:isolate;
 }
 
-.highlightCard:hover{
+.thImageWrap{
+    position:absolute;
+    inset:0;
+}
+
+.thImage{
+    object-fit:cover;
+    transition:transform .8s ease;
+}
+
+.thImageOverlay{
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.08) 0%,
+            rgba(0,0,0,.18) 25%,
+            rgba(0,0,0,.55) 65%,
+            rgba(0,0,0,.92) 100%);
+}
+
+/*=========================================================
+BADGE
+=========================================================*/
+
+.thBadge{
+    position:absolute;
+    top:18px;
+    left:18px;
+    z-index:5;
+}
+
+.thBadge span{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:8px 15px;
+    border-radius:999px;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:#fff;
+    backdrop-filter:blur(14px);
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.18);
+}
+
+/*=========================================================
+CONTENT
+=========================================================*/
+
+.thContent{
+    position:absolute;
+    left:20px;
+    right:20px;
+    bottom:18px;
+    z-index:5;
+}
+
+.thContentTop{
+    margin-bottom:8px;
+}
+
+.thContent h3{
+    font-size:20px;
+    line-height:1.35;
+    font-weight:700;
+    color:#fff;
+    margin:0;
+    letter-spacing:.2px;
+}
+
+.thContent p{
+    margin-top:10px;
+    color:rgba(255,255,255,.87);
+    font-size:14px;
+    line-height:1.65;
+}
+
+/*=========================================================
+BOTTOM
+=========================================================*/
+
+.thBottom{
+    margin-top:18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.thLine{
+    width:58px;
+    height:3px;
+    border-radius:20px;
+    background:#d4af37;
+}
+
+.thExplore{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:#f5d76e;
+}
+
+/*=========================================================
+BORDER ANIMATION
+=========================================================*/
+
+.thCard::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    padding:1px;
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212,175,55,.70),
+            transparent 35%,
+            transparent 65%,
+            rgba(212,175,55,.45));
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+            mask-composite:exclude;
+
+    opacity:0;
+    transition:.45s;
+    z-index:6;
+}
+
+/*=========================================================
+BOTTOM BAR
+=========================================================*/
+
+.thCard::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:4px;
+    background:#d4af37;
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .45s ease;
+    z-index:6;
+}
+
+/*=========================================================
+HOVER
+=========================================================*/
+
+.thCard:hover{
     transform:translateY(-10px);
+    box-shadow:
+        0 22px 55px rgba(0,0,0,.28),
+        0 0 35px rgba(212,175,55,.18);
+}
+
+.thCard:hover::before{
+    opacity:1;
+}
+
+.thCard:hover::after{
+    transform:scaleX(1);
+}
+
+.thCard:hover .thImage{
+    transform:scale(1.12);
+}
+
+.thCard:hover .thBadge span{
+    background:#d4af37;
+    color:#111;
     border-color:#d4af37;
 }
 
-.iconBox{
-    width:75px;
-    height:75px;
+.thCard:hover .thExplore{    transition:.35s;
+}
+
+/*=========================================================
+                 LARGE LAPTOP (≤1400px)
+=========================================================*/
+
+@media (max-width:1400px){
+
+.thSection{
+    width:min(1180px,95%);
+}
+
+.thGrid{
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.thCard{
+    height:270px;
+}
+
+.thTitle{
+    font-size:38px;
+}
+
+.thDescription{
+    font-size:15px;
+    max-width:620px;
+}
+
+.thContent{
+    left:18px;
+    right:18px;
+    bottom:18px;
+}
+
+.thContent h3{
+    font-size:18px;
+}
+
+.thContent p{
+    font-size:13px;
+    line-height:1.6;
+}
+
+}
+
+
+/*=========================================================
+                    LAPTOP (≤1200px)
+=========================================================*/
+
+@media (max-width:1200px){
+
+.thGrid{
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.thCard{
+    height:260px;
+}
+
+.thTitle{
+    font-size:35px;
+}
+
+.thDescription{
+    font-size:15px;
+}
+
+}
+
+
+/*=========================================================
+                    TABLET (≤992px)
+=========================================================*/
+
+@media (max-width:992px){
+
+.thSection{
+    margin:70px auto;
+}
+
+.thHeading{
+    margin-bottom:38px;
+}
+
+.thTitle{
+    font-size:31px;
+}
+
+.thDescription{
+    font-size:14px;
+    line-height:1.7;
+    max-width:560px;
+}
+
+.thGrid{
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:16px;
+
+}
+
+.thCard{
+
+    height:245px;
+    border-radius:20px;
+
+}
+
+.thBadge{
+
+    top:14px;
+    left:14px;
+
+}
+
+.thBadge span{
+
+    font-size:10px;
+    padding:6px 12px;
+
+}
+
+.thContent{
+
+    left:16px;
+    right:16px;
+    bottom:16px;
+
+}
+
+.thContent h3{
+
+    font-size:18px;
+
+}
+
+.thContent p{
+
+    font-size:13px;
+    line-height:1.55;
+
+}
+
+.thBottom{
+
+    margin-top:14px;
+
+}
+
+.thLine{
+
+    width:46px;
+
+}
+
+}
+
+
+/*=========================================================
+                 MOBILE (≤768px)
+=========================================================*/
+
+@media (max-width:768px){
+
+.thSection{
+
+    margin:55px auto;
+
+}
+
+.thHeading{
+
+    margin-bottom:30px;
+
+}
+
+.thSubtitle{
+
+    font-size:10px;
+    padding:7px 15px;
+    letter-spacing:1.6px;
+
+}
+
+.thTitle{
+
+    margin-top:15px;
+    font-size:26px;
+    line-height:1.25;
+
+}
+
+.thDescription{
+
+    margin-top:14px;
+    font-size:13px;
+    line-height:1.65;
+    padding:0 8px;
+
+}
+
+.thGrid{
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:14px;
+
+}
+
+.thCard{
+
+    height:220px;
     border-radius:18px;
-    background:#1b1b1b;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin-bottom:25px;
+
 }
 
-.highlightCard h3{
-    margin-bottom:12px;
-    color:#fff;
+.thBadge{
+
+    top:12px;
+    left:12px;
+
 }
 
-.highlightCard p{
-    color:#bdbdbd;
-    line-height:1.8;
+.thBadge span{
+
+    padding:5px 10px;
+    font-size:9px;
+
+}
+
+.thContent{
+
+    left:14px;
+    right:14px;
+    bottom:14px;
+
+}
+
+.thContent h3{
+
+    font-size:16px;
+    line-height:1.35;
+
+}
+
+.thContent p{
+
+    margin-top:7px;
+    font-size:12px;
+    line-height:1.45;
+
+}
+
+.thBottom{
+
+    margin-top:12px;
+
+}
+
+.thExplore{
+
+    font-size:10px;
+
+}
+
+.thLine{
+
+    width:38px;
+    height:2px;
+
+}
+
 }
 
 
-/* ===========================
-   TIMELINE
-=========================== */
+/*=========================================================
+            SMALL MOBILE (≤480px)
+=========================================================*/
+
+@media (max-width:480px){
+
+.thSection{
+
+    width:94%;
+    margin:45px auto;
+
+}
+
+.thTitle{
+
+    font-size:23px;
+
+}
+
+.thDescription{
+
+    font-size:12px;
+
+}
+
+.thGrid{
+
+    gap:12px;
+
+}
+
+.thCard{
+
+    height:190px;
+    border-radius:16px;
+
+}
+
+.thBadge{
+
+    top:10px;
+    left:10px;
+
+}
+
+.thBadge span{
+
+    font-size:8px;
+    padding:4px 8px;
+
+}
+
+.thContent{
+
+    left:11px;
+    right:11px;
+    bottom:11px;
+
+}
+
+.thContent h3{
+
+    font-size:14px;
+
+}
+
+.thContent p{
+
+    margin-top:6px;
+    font-size:10px;
+    line-height:1.45;
+
+}
+
+.thBottom{
+
+    margin-top:10px;
+
+}
+
+.thExplore{
+
+    font-size:9px;
+
+}
+
+.thLine{
+
+    width:30px;
+
+}
+
+}
+
+
+/*=========================================================
+             EXTRA SMALL DEVICES (≤360px)
+=========================================================*/
+
+@media (max-width:360px){
+
+.thGrid{
+
+    gap:10px;
+
+}
+
+.thCard{
+
+    height:175px;
+
+}
+
+.thTitle{
+
+    font-size:21px;
+
+}
+
+.thContent h3{
+
+    font-size:13px;
+
+}
+
+.thContent p{
+
+    display:none;
+
+}
+
+.thBottom{
+
+    margin-top:8px;
+
+}
+
+}
+
+/*=========================================================
+        PREMIUM MICRO ANIMATIONS
+=========================================================*/
+
+.thSection{
+    animation:thFadeUp .9s ease;
+}
+
+@keyframes thFadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(45px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/*=========================================================
+        FLOATING BACKGROUND
+=========================================================*/
+
+.thBgCircle1{
+
+    animation:thFloatLeft 8s ease-in-out infinite;
+
+}
+
+.thBgCircle2{
+
+    animation:thFloatRight 10s ease-in-out infinite;
+
+}
+
+@keyframes thFloatLeft{
+
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(30px);
+    }
+
+}
+
+@keyframes thFloatRight{
+
+    0%,100%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-35px);
+    }
+
+}
+
+
+/*=========================================================
+        CARD PERFORMANCE
+=========================================================*/
+
+.thCard{
+
+    transform-style:preserve-3d;
+
+    will-change:transform;
+
+    backface-visibility:hidden;
+
+}
+
+
+/*=========================================================
+        PREMIUM SHINE
+=========================================================*/
+
+.thCard .thImageWrap::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-150%;
+
+    left:-120%;
+
+    width:60%;
+
+    height:300%;
+
+    transform:rotate(28deg);
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.18),
+    transparent);
+
+    transition:1.1s;
+
+    z-index:3;
+
+}
+
+.thCard:hover .thImageWrap::before{
+
+    left:170%;
+
+}
+
+
+/*=========================================================
+        IMAGE EFFECT
+=========================================================*/
+
+.thImage{
+
+    filter:
+    saturate(1.02)
+    contrast(1.03)
+    brightness(.94);
+
+}
+
+.thCard:hover .thImage{
+
+    transform:scale(1.12);
+
+    filter:
+    saturate(1.12)
+    contrast(1.08)
+    brightness(1);
+
+}
+
+
+/*=========================================================
+        OVERLAY
+=========================================================*/
+
+.thImageOverlay{
+
+transition:.45s;
+
+}
+
+.thCard:hover .thImageOverlay{
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(0,0,0,.05),
+
+rgba(0,0,0,.18),
+
+rgba(0,0,0,.48),
+
+rgba(0,0,0,.86)
+
+);
+
+}
+
+
+/*=========================================================
+        BADGE
+=========================================================*/
+
+.thBadge span{
+
+transition:
+
+background .35s,
+
+color .35s,
+
+transform .35s,
+
+border-color .35s,
+
+box-shadow .35s;
+
+}
+
+.thCard:hover .thBadge span{
+
+transform:translateY(-2px);
+
+box-shadow:
+
+0 8px 18px rgba(212,175,55,.28);
+
+}
+
+
+/*=========================================================
+        TITLE
+=========================================================*/
+
+.thContent h3{
+
+transition:
+
+color .35s,
+
+transform .35s;
+
+}
+
+.thCard:hover .thContent h3{
+
+color:#ffe28a;
+
+transform:translateX(3px);
+
+}
+
+
+/*=========================================================
+        DESCRIPTION
+=========================================================*/
+
+.thContent p{
+
+transition:
+
+opacity .35s,
+
+transform .35s;
+
+}
+
+.thCard:hover .thContent p{
+
+opacity:1;
+
+transform:translateY(-2px);
+
+}
+
+
+/*=========================================================
+        LINE
+=========================================================*/
+
+.thLine{
+
+transition:
+
+width .35s,
+
+background .35s;
+
+}
+
+.thCard:hover .thLine{
+width:78px;
+
+background:#ffe28a;
+
+}
+
+
+/*=========================================================
+        EXPLORE
+=========================================================*/
+
+.thExplore{
+transition: transform .35s, letter-spacing .35s,
+color .35s;
+}
+
+.thCard:hover .thExplore{
+transform:translateX(6px);
+letter-spacing:1.6px;
+color:#fff3b8;
+}
+
+
+/*=========================================================
+        PREMIUM GLOW
+=========================================================*/
+
+.thCard:hover{
+box-shadow: 0 22px 55px rgba(0,0,0,.24),
+0 10px 28px rgba(212,175,55,.18),
+0 0 55px rgba(212,175,55,.10);
+}
+
+
+/*=========================================================
+        BORDER GLOW
+=========================================================*/
+
+.thCard::before{
+transition:
+opacity .45s,
+filter .45s;
+}
+
+.thCard:hover::before{
+opacity:1;
+filter:brightness(1.3);
+}
+
+
+/*=========================================================
+        ACTIVE
+=========================================================*/
+
+.thCard:active{
+transform: translateY(-3px)
+scale(.985);
+}
+
+
+/*=========================================================
+        MOBILE
+=========================================================*/
+
+@media(max-width:768px){
+.thCard:hover{
+transform:none;
+box-shadow: 0 12px 24px rgba(0,0,0,.18);
+}
+
+.thCard:hover .thImage{
+transform:scale(1.05);
+}
+
+.thCard:hover .thLine{
+width:46px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===============================
+   TIMELINE SECTION
+================================*/
+
+.section{
+    position:relative;
+    overflow:hidden;
+}
+
+.section::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,#d4af3722 0%,transparent 70%);
+    top:-180px;
+    right:-180px;
+    pointer-events:none;
+}
+
+.section::after{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    background:radial-gradient(circle,#ffffff08 0%,transparent 70%);
+    bottom:-150px;
+    left:-150px;
+    pointer-events:none;
+}
 
 .timelineWrapper{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(450px,1fr));
-    gap:35px;
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+    gap:28px;
+    position:relative;
+    z-index:2;
 }
 
+/* ===============================
+   CARD
+================================*/
+
 .dayCard{
-    background:#0d0d0d;
-    border:1px solid #222;
-    border-radius:22px;
-    padding:35px;
-    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:28px;
+
+    border-radius:24px;
+
+    border:1px solid rgba(212,175,55,.15);
+
+    background:
+    linear-gradient(145deg,#171717,#101010);
+
+    backdrop-filter:blur(18px);
+
+    transition:.45s ease;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.35);
+}
+
+.dayCard::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+    130deg,
+    rgba(212,175,55,.08),
+    transparent 45%,
+    rgba(255,255,255,.03));
+
+    opacity:0;
+
+    transition:.4s;
 }
 
 .dayCard:hover{
+
+    transform:translateY(-8px);
+
     border-color:#d4af37;
-    transform:translateY(-6px);
+
+    box-shadow:
+    0 25px 70px rgba(212,175,55,.18);
 }
 
+.dayCard:hover::before{
+    opacity:1;
+}
+
+/* ===============================
+   HEADER
+================================*/
+
 .dayHeader{
-    margin-bottom:35px;
+
+    margin-bottom:28px;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+    padding-bottom:18px;
 }
 
 .dayHeader span{
-    display:inline-block;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:7px 16px;
+
+    border-radius:50px;
+
     background:#d4af37;
+
     color:#000;
-    padding:8px 18px;
-    border-radius:100px;
-    font-size:.8rem;
+
+    font-size:.78rem;
+
     font-weight:700;
-    margin-bottom:15px;
+
+    letter-spacing:1px;
+
+    margin-bottom:12px;
 }
 
 .dayHeader h3{
-    font-size:2rem;
+
+    font-size:1.65rem;
+
+    color:#fff;
+
+    font-weight:700;
+}
+
+/* ===============================
+   TIMELINE
+================================*/
+/* ==========================================
+   PREMIUM TIMELINE
+========================================== */
+
+.timelineWrapper{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,420px));
+    justify-content:center;
+    gap:24px;
+    margin-top:45px;
+}
+
+.dayCard{
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at top right,rgba(212,175,55,.12),transparent 45%),
+        linear-gradient(180deg,#161616,#101010);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+    padding:26px;
+    transition:.35s ease;
+    backdrop-filter:blur(14px);
+}
+
+.dayCard::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(130deg,
+        transparent,
+        rgba(212,175,55,.05),
+        transparent);
+    opacity:0;
+    transition:.4s;
+}
+
+.dayCard:hover{
+    transform:translateY(-8px);
+    border-color:#d4af37;
+    box-shadow:
+    0 18px 40px rgba(0,0,0,.45),
+    0 0 30px rgba(212,175,55,.15);
+}
+
+.dayCard:hover::before{
+    opacity:1;
+}
+
+.dayHeader{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:24px;
+}
+
+.dayHeader span{
+    background:#d4af37;
+    color:#000;
+    font-weight:700;
+    font-size:.72rem;
+    letter-spacing:1px;
+    padding:8px 16px;
+    border-radius:50px;
+    flex-shrink:0;
+}
+
+.dayHeader h3{
+    font-size:1.35rem;
+    font-weight:700;
+    color:#fff;
 }
 
 .timeline{
     position:relative;
-    padding-left:35px;
+    padding-left:28px;
 }
 
 .timeline::before{
     content:"";
     position:absolute;
-    left:10px;
+    left:8px;
     top:0;
+    bottom:0;
     width:2px;
-    height:100%;
-    background:#d4af37;
+    background:linear-gradient(
+        to bottom,
+        #d4af37,
+        rgba(212,175,55,.25)
+    );
 }
 
 .timelineItem{
     position:relative;
     display:flex;
-    gap:25px;
-    margin-bottom:40px;
+    gap:16px;
+    padding-bottom:22px;
+    animation:fadeUp .6s ease both;
 }
 
 .timelineItem:last-child{
-    margin-bottom:0;
+    padding-bottom:0;
 }
 
 .timelineItem::before{
     content:"";
     position:absolute;
-    left:-31px;
-    top:8px;
-    width:18px;
-    height:18px;
-    background:#d4af37;
+    left:-27px;
+    top:5px;
+    width:14px;
+    height:14px;
     border-radius:50%;
-    box-shadow:0 0 0 5px rgba(212,175,55,.18);
+    background:#d4af37;
+    box-shadow:
+    0 0 0 5px rgba(212,175,55,.12),
+    0 0 12px rgba(212,175,55,.45);
+    transition:.3s;
+}
+
+.timelineItem:hover::before{
+    transform:scale(1.25);
 }
 
 .timelineItem span{
-    min-width:120px;
-    color:#d4af37;
+    min-width:95px;
+    color:#f4c84c;
+    font-size:.82rem;
     font-weight:700;
-    font-size:.95rem;
+    line-height:1.5;
 }
 
 .timelineItem h4{
-    margin-bottom:8px;
-    font-size:1.08rem;
+    color:#fff;
+    font-size:1rem;
+    margin-bottom:4px;
 }
 
 .timelineItem p{
-    color:#bdbdbd;
-    line-height:1.8;
+    color:#b9b9b9;
+    font-size:.9rem;
+    line-height:1.65;
 }
+
+/* Card Animation */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ===========================
+        TABLET
+=========================== */
+
+@media(max-width:991px){
+
+.timelineWrapper{
+
+    grid-template-columns:1fr;
+    max-width:650px;
+    margin:auto;
+    gap:20px;
+
+}
+
+.dayCard{
+
+    padding:24px;
+
+}
+
+.dayHeader h3{
+
+    font-size:1.25rem;
+
+}
+
+}
+
+/* ===========================
+        MOBILE
+=========================== */
+
+@media(max-width:600px){
+
+.timelineWrapper{
+
+    gap:18px;
+    margin-top:35px;
+
+}
+
+.dayCard{
+
+    padding:20px;
+    border-radius:18px;
+
+}
+
+.dayHeader{
+
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:18px;
+
+}
+
+.dayHeader h3{
+
+    font-size:1.15rem;
+
+}
+
+.timeline{
+
+    padding-left:22px;
+
+}
+
+.timeline::before{
+
+    left:6px;
+
+}
+
+.timelineItem{
+
+    flex-direction:column;
+    gap:8px;
+    padding-bottom:18px;
+
+}
+
+.timelineItem::before{
+
+    left:-21px;
+    width:12px;
+    height:12px;
+
+}
+
+.timelineItem span{
+
+    min-width:auto;
+    font-size:.8rem;
+
+}
+
+.timelineItem h4{
+
+    font-size:.95rem;
+
+}
+
+.timelineItem p{
+
+    font-size:.85rem;
+    line-height:1.6;
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* ===========================
    PICKUP
 =========================== */
 
-.pickupGrid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-    gap:30px;
+.pickupGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 28px;
+    align-items: start;
+    margin: 40px 0;
+    width: 100%;
 }
 
-.pickupCard{
-    background:#101010;
-    border:1px solid #222;
-    border-radius:20px;
-    padding:35px;
-    transition:.35s;
+.pickupCard {
+    background: linear-gradient(180deg, #16381b 0%, #112915 100%);
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    border-radius: 22px;
+    padding: 32px;
+    transition: all .35s ease;
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.28),
+        inset 0 1px 0 rgba(255,255,255,.05);
+    height: fit-content;
+    overflow: hidden;
 }
 
 .pickupCard:hover{
+    transform: translateY(-6px);
     border-color:#d4af37;
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.4),
+        0 0 20px rgba(212,175,55,.15);
 }
 
 .pickupCard h3{
     color:#d4af37;
-    margin-bottom:25px;
-    font-size:1.5rem;
+    font-size:2rem;
+    font-weight:700;
+    margin:0 0 28px;
+    position:relative;
+    padding-bottom:14px;
+}
+
+.pickupCard h3::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:70px;
+    height:3px;
+    border-radius:50px;
+    background:linear-gradient(90deg,#d4af37,#f6d365);
 }
 
 .pickupCard ul{
     list-style:none;
+    padding:0;
+    margin:0;
 }
 
 .pickupCard li{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:16px 0;
-    border-bottom:1px solid #202020;
+    gap:20px;
+    padding:18px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    transition:.25s;
 }
 
 .pickupCard li:last-child{
-    border:none;
+    border-bottom:none;
+    padding-bottom:0;
+}
+
+.pickupCard li:hover{
+    padding-left:8px;
 }
 
 .pickupCard strong{
+    color:#fff;
+    font-size:1.08rem;
     font-weight:600;
 }
 
 .pickupCard span{
-    color:#d4af37;
+    color:#f1c84a;
+    font-size:1.05rem;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+/* Large Screens */
+
+@media (max-width:1200px){
+
+    .pickupGrid{
+        grid-template-columns:repeat(2,1fr);
+        gap:24px;
+    }
+
+}
+
+/* Tablets */
+
+@media (max-width:900px){
+
+    .pickupGrid{
+        grid-template-columns:1fr;
+        gap:22px;
+    }
+
+    .pickupCard{
+        padding:28px;
+    }
+
+    .pickupCard h3{
+        font-size:1.8rem;
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width:600px){
+
+    .pickupGrid{
+        margin:25px 0;
+        gap:18px;
+    }
+
+    .pickupCard{
+        padding:22px;
+        border-radius:18px;
+    }
+
+    .pickupCard h3{
+        font-size:1.55rem;
+        margin-bottom:20px;
+    }
+
+    .pickupCard li{
+        padding:15px 0;
+    }
+
+    .pickupCard strong{
+        font-size:1rem;
+    }
+
+    .pickupCard span{
+        font-size:.95rem;
+    }
+
+}
+
+/* Small Phones */
+
+@media (max-width:420px){
+
+    .pickupGrid{
+        grid-template-columns:1fr;
+    }
+
+    .pickupCard{
+        padding:18px;
+        border-radius:16px;
+    }
+
+    .pickupCard li{
+        gap:12px;
+    }
+
+    .pickupCard strong{
+        font-size:.95rem;
+    }
+
+    .pickupCard span{
+        font-size:.9rem;
+    }
+
 }
 
 
@@ -398,42 +2774,142 @@ body */
    PRICE
 =========================== */
 
+
+
+
+
 .priceGrid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:24px;
+    margin-top:35px;
 }
 
 .priceCard{
-    background:linear-gradient(145deg,#101010,#191919);
-    border:1px solid #282828;
-    border-radius:22px;
-    padding:45px;
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(180deg,#171717,#101010);
+    border:1px solid rgba(212,175,55,.18);
+    border-radius:20px;
+    padding:28px;
     text-align:center;
     transition:.35s;
 }
 
-.priceCard:hover{
-    transform:translateY(-8px);
-    border-color:#d4af37;
-    box-shadow:0 20px 40px rgba(0,0,0,.45);
+.priceCard::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at top right,
+    rgba(212,175,55,.12),transparent 60%);
+    opacity:0;
+    transition:.35s;
 }
 
-.priceCard small{
+.priceCard:hover{
+    transform:translateY(-6px);
+    border-color:#d4af37;
+    box-shadow:0 18px 35px rgba(0,0,0,.35);
+}
+
+.priceCard:hover::before{
+    opacity:1;
+}
+
+.priceCard>*{
+    position:relative;
+    z-index:2;
+}
+
+.priceBadge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:7px 16px;
+    background:rgba(212,175,55,.12);
+    border:1px solid rgba(212,175,55,.25);
     color:#d4af37;
-    letter-spacing:3px;
+    border-radius:50px;
+    font-size:.78rem;
+    font-weight:600;
+    letter-spacing:1.5px;
+    margin-bottom:18px;
 }
 
 .priceCard h3{
-    font-size:3rem;
-    margin:18px 0;
     color:#fff;
+    font-size:2.7rem;
+    line-height:1;
+    margin-bottom:10px;
 }
 
 .priceCard p{
     color:#bdbdbd;
-    margin-bottom:30px;
+    margin-bottom:20px;
 }
+
+.priceLine{
+    width:70px;
+    height:3px;
+    margin:0 auto 22px;
+    border-radius:20px;
+    background:#d4af37;
+}
+
+.priceFeatures{
+    list-style:none;
+    padding:0;
+    margin:0 0 28px;
+}
+
+.priceFeatures li{
+    padding:8px 0;
+    color:#d9d9d9;
+    font-size:.95rem;
+}
+
+@media(max-width:768px){
+
+    .priceGrid{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .priceCard{
+        padding:24px;
+    }
+
+    .priceCard h3{
+        font-size:2.3rem;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .priceCard{
+        padding:20px;
+        border-radius:18px;
+    }
+
+    .priceBadge{
+        font-size:.72rem;
+    }
+
+    .priceCard h3{
+        font-size:2rem;
+    }
+
+    .priceFeatures li{
+        font-size:.9rem;
+    }
+
+}
+
+
+
+
+
 
 
 /* ===========================
@@ -561,11 +3037,15 @@ body */
 
 .bookingSection{
     width:100%;
-    padding:100px 20px;
+    padding:100px 0px;
     background:
-    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-    url("/images/aadrai/cta.webp");
-    background-size:cover;
+    /* linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)), */
+    url("/aadraiBGI.png");
+    display: flex;
+    justify-content: center;
+    background-color: rgb(3, 59, 59);
+    
+    background-size: contain;
     background-position:center;
     background-attachment:fixed;
 }
@@ -601,7 +3081,7 @@ body */
     line-height:1.9;
 }
 
-.bookingButtons{
+.bookingCard .bookingButtons{
     margin-top:45px;
     display:flex;
     justify-content:center;
@@ -745,7 +3225,7 @@ body */
 .section{
     padding:70px 0;
 }
-
+/* 
 .hero{
     min-height:650px;
 }
@@ -764,11 +3244,15 @@ body */
 
 .bookingCard{
     padding:45px;
+     width:min(600px,75%);
+     margin: 5px;
 }
-
+.bookingCard .bookingButtons{
+   width: 200px;
+}
 .bookingCard h2{
     font-size:2.2rem;
-}
+} */
 
 .footerGrid{
     gap:30px;
@@ -778,7 +3262,7 @@ body */
 
 
 @media(max-width:768px){
-
+/* 
 .hero{
     min-height:600px;
     padding:20px;
@@ -795,12 +3279,11 @@ body */
 .heroButtons{
     flex-direction:column;
     align-items:center;
-}
+} 
 
-.bookBtn,
-.callBtn{
+.heroButtons .bookBtn,
+.heroButtons .callBtn{
     width:100%;
-    max-width:320px;
     text-align:center;
 }
 
@@ -835,7 +3318,7 @@ body */
 
 .bookingButtons{
     flex-direction:column;
-}
+} */
 
 .gallery{
     grid-template-columns:1fr;
@@ -899,5 +3382,29 @@ body */
     font-size:.85rem;
 }
 
+
+
+/* .heroButtons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:45px;
+}  .bookBtn{
+    padding:16px 28px;
+    border-radius:12px;
+    width: 100px;
 }
 
+.callBtn{
+    padding:16px 28px;
+    width: 100px;
+} */
+
+
+}
+
+
+@media(max-width:480px){
+
+}

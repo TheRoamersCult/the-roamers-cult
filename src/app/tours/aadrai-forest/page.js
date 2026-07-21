@@ -4,12 +4,76 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./Aadrai.module.css";
 
+// const batches = [
+//   { title: "Batch 1", date: "4 - 5 July" },
+//   { title: "Batch 2", date: "11 - 12 July" },
+//   { title: "Batch 3", date: "18 - 19 July" },
+//   { title: "Batch 4", date: "25 - 26 July" },
+// ];
 const batches = [
-  { title: "Batch 1", date: "4 - 5 July" },
-  { title: "Batch 2", date: "11 - 12 July" },
-  { title: "Batch 3", date: "18 - 19 July" },
-  { title: "Batch 4", date: "25 - 26 July" },
+  {
+    id: 1,
+    month: "JUL",
+    day: "05",
+    weekday: "Sunday",
+    title: "Weekend Explorer",
+    date: "05 July 2026",
+    price: 1499,
+    price2: 1599,
+    seats: 9,
+    pickup: "Pune & Mumbai",
+    level: "Easy",
+    duration: "1N / 1D",
+    popular: true,
+  },
+  {
+    id: 2,
+    month: "JUL",
+    day: "12",
+    weekday: "Sunday",
+    title: "Monsoon Special",
+    date: "12 July 2026",
+    price: 1499,
+        price2: 1599,
+    seats: 14,
+    pickup: "Pune & Mumbai",
+    level: "Easy",
+    duration: "1N / 1D",
+    popular: false,
+  },
+  {
+    id: 3,
+    month: "JUL",
+    day: "19",
+    weekday: "Sunday",
+    title: "Waterfall Batch",
+    date: "19 July 2026",
+    price: 1499,
+        price2: 1599,
+    seats: 6,
+    pickup: "Pune & Mumbai",
+    level: "Moderate",
+    duration: "1N / 1D",
+    popular: true,
+  },
+  {
+    id: 4,
+    month: "JUL",
+    day: "26",
+    weekday: "Sunday",
+    title: "Adventure Batch",
+    date: "26 July 2026",
+    price: 1499,
+        price2: 1599,
+    seats: 11,
+    pickup: "Pune & Mumbai",
+    level: "Easy",
+    duration: "1N / 1D",
+    popular: false,
+  },
 ];
+
+
 
 const highlights = [
   {
@@ -50,138 +114,433 @@ export default function AadraiForest() {
 
       {/* HERO */}
 
-      <section className={styles.hero}>
+{/* ===========================
+      PREMIUM HERO
+=========================== */}
 
-        <Image
-          src="/images/aadrai/hero.webp"
-          alt="Aadrai Jungle Trek"
-          fill
-          priority
-          className={styles.heroImage}
-        />
+<section className={styles.hero}>
 
-        <div className={styles.overlay}></div>
+  {/* LEFT SIDE */}
 
-        <div className={styles.heroContent}>
+  <div className={styles.heroContent}>
 
-          <span className={styles.badge}>
-            THE ROAMER'S CULT
+    {/* <span className={styles.badge}>
+      🌿 THE ROAMER'S CULT
+    </span> */}
+
+    <h1>
+      Aadrai Jungle
+      <span>Trek 2026</span>
+    </h1>
+
+    <p className={styles.heroInfo}>
+      📍 Malshej Ghat, Maharashtra
+      <span className={styles.dot}></span>
+      🌧 Monsoon Special
+    </p>
+
+    <p className={styles.heroText}>
+      Experience Maharashtra's most beautiful monsoon
+      trek filled with waterfalls, dense forests,
+      river crossings and unforgettable memories with
+      The Roamer's Cult.
+    </p>
+
+    <div className={styles.heroStats}>
+
+      <div className={styles.statCard}>
+        <h3>15+</h3>
+        <span>Waterfalls</span>
+      </div>
+
+      <div className={styles.statCard}>
+        <h3>4.9★</h3>
+        <span>Ratings</span>
+      </div>
+
+      <div className={styles.statCard}>
+        <h3>5000+</h3>
+        <span>Trekkers</span>
+      </div>
+
+    </div>
+
+    <div className={styles.heroButtons}>
+
+      <Link
+        href="https://wa.me/917620697285"
+        className={styles.bookBtn}
+      >
+        Book Now
+      </Link>
+
+      <Link
+        href="tel:+917620697285"
+        className={styles.callBtn}
+      >
+        Call Now
+      </Link>
+
+    </div>
+
+  </div>
+
+  {/* RIGHT SIDE */}
+
+  <div className={styles.heroImageBox}>
+
+    <Image
+      src="/aadraiBGI.png"
+      alt="Aadrai Jungle Trek"
+      fill
+      priority
+      className={styles.heroImage}
+    />
+
+    <div className={styles.overlay}></div>
+
+    <div className={styles.floatingBadge1}>
+      Monsoon
+    </div>
+
+    <div className={styles.floatingBadge2}>
+      Waterfalls
+    </div>
+
+    <div className={styles.floatingBadge3}>
+      Beginner Friendly
+    </div>
+
+        {/* GLASS INFO CARD */}
+
+    <div className={styles.heroCard}>
+
+      <span className={styles.rating}>
+        ⭐ 4.9 Rating
+      </span>
+
+      <h3>
+        Monsoon Adventure
+      </h3>
+
+      <p>
+        Explore lush green forests,
+        hidden waterfalls, river crossings
+        and breathtaking viewpoints with
+        Maharashtra's most loved trekking
+        community.
+      </p>
+
+      <div className={styles.cardBottom}>
+
+        <div className={styles.cardItem}>
+          <strong>1 Day</strong>
+          <span>Duration</span>
+        </div>
+
+        <div className={styles.cardItem}>
+          <strong>Easy</strong>
+          <span>Difficulty</span>
+        </div>
+
+        <div className={styles.cardItem}>
+          <strong>₹1499 & ₹1599</strong>
+          <span>Starting</span>
+        </div>
+
+      </div>
+
+    </div>
+
+    {/* BOTTOM FLOATING BAR */}
+
+    <div className={styles.bottomBar}>
+
+      <div className={styles.bottomItem}>
+        Pune Pickup
+      </div>
+
+      <div className={styles.bottomItem}>
+        Forest Trail
+      </div>
+
+      <div className={styles.bottomItem}>
+        Reverse Waterfall
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+      {/* UPCOMING BATCHES */}
+
+{/* ===============================
+      BATCH CALENDAR
+================================ */}
+
+<section className={styles.batchSection}>
+
+  <div className={styles.batchBg1}></div>
+  <div className={styles.batchBg2}></div>
+
+  <div className={styles.batchHeading}>
+
+    <span className={styles.batchSubtitle}>
+      🌿 Upcoming Departures
+    </span>
+
+    <h2>
+      Choose Your
+      <span> Adventure Date</span>
+    </h2>
+
+    <p>
+      Limited seats every weekend with experienced trek leaders.
+      Comfortable pickup from Pune & Mumbai.
+    </p>
+
+  </div>
+
+  <div className={styles.batchGrid}>
+
+    {batches.map((item) => (
+
+      <div
+        key={item.id}
+        className={`${styles.batchCard} ${
+          item.popular ? styles.popular : ""
+        }`}
+      >
+
+        {/* {item.popular && (
+          <div className={styles.popularTag}>
+            🔥 Popular
+          </div>
+        )} */}
+
+        {/* DATE */}
+
+        <div className={styles.dateBox}>
+
+          <span className={styles.month}>
+            {item.month}
           </span>
 
-          <h1>
-            Aadrai Jungle Trek
-          </h1>
+          <h3>
+            {item.day}
+          </h3>
 
-          <p>
-            Age Group : 18 - 35 Years
-          </p>
+          <small>
+            {item.weekday}
+          </small>
 
-          <p className={styles.heroText}>
-            Experience one of Maharashtra's most beautiful
-            monsoon jungle treks filled with waterfalls,
-            dense forests, unforgettable vibes and amazing
-            people.
-          </p>
+        </div>
 
-          <div className={styles.heroButtons}>
+        {/* CONTENT */}
 
-            <Link
-              href="https://wa.me/917620697285"
-              className={styles.bookBtn}
-            >
-              Book Now
-            </Link>
+        <div className={styles.batchContent}>
 
-            <Link
-              href="tel:+917620697285"
-              className={styles.callBtn}
-            >
-              Call Now
-            </Link>
+          <div className={styles.topRow}>
+
+            <div>
+
+              <h4>
+                {item.title}
+              </h4>
+
+              <p>
+                {item.date}
+              </p>
+
+            </div>
+
+            <div className={styles.priceBox}>
+              ₹{item.price} &
+              ₹{item.price2}
+            </div>
+
+          </div>
+
+          {/* INFO */}
+
+          <div className={styles.infoRow}>
+
+            <span>
+              {item.pickup}
+            </span>
+
+            <span>
+              {item.level}
+            </span>
+
+            <span>
+              {item.duration}
+            </span>
+
+          </div>
+
+          {/* FOOTER */}
+
+          <div className={styles.bottomRow}>
+
+            <div className={styles.seats}>
+
+              <span className={styles.dot}></span>
+
+              <strong>
+                {item.seats}
+              </strong>
+
+              Seats Left
+
+            </div>
+
+            <button className={styles.bookBtn}>
+              Book Now →
+            </button>
 
           </div>
 
         </div>
 
-      </section>
+      </div>
 
-      {/* UPCOMING BATCHES */}
+    ))}
 
-      <section className={styles.section}>
+  </div>
 
-        <div className={styles.titleBox}>
-          <span>Upcoming Dates</span>
-          <h2>Choose Your Batch</h2>
-        </div>
+</section>
 
-        <div className={styles.batchGrid}>
 
-          {batches.map((item, index) => (
 
-            <div
-              className={styles.batchCard}
-              key={index}
-            >
 
-              <h3>{item.title}</h3>
-
-              <p>{item.date}</p>
-
-            </div>
-
-          ))}
-
-        </div>
-
-      </section>
 
       {/* TOUR HIGHLIGHTS */}
 
-      <section className={styles.section}>
+{/* =======================================================
+        PREMIUM TOUR HIGHLIGHTS
+======================================================= */}
 
-        <div className={styles.titleBox}>
+<section className={styles.thSection}>
 
-          <span>Tour Highlights</span>
+    {/* Background Elements */}
 
-          <h2>
-            Everything Included In Your Adventure
-          </h2>
+    <div className={styles.thBgCircle1}></div>
+    <div className={styles.thBgCircle2}></div>
 
-        </div>
+    {/* Heading */}
 
-        <div className={styles.highlightGrid}>
+    <div className={styles.thHeading}>
 
-          {highlights.map((item, index) => (
+        <span className={styles.thSubtitle}>
+            TOUR HIGHLIGHTS
+        </span>
 
-            <div
-              key={index}
-              className={styles.highlightCard}
+        <h2 className={styles.thTitle}>
+            Everything Included
+            <br />
+            In Your Adventure
+        </h2>
+
+        <p className={styles.thDescription}>
+            Every batch is carefully planned with premium facilities,
+            experienced trek leaders and everything required for a
+            safe, memorable and adventure-filled experience.
+        </p>
+
+    </div>
+
+    {/* Cards */}
+
+    <div className={styles.thGrid}>
+
+        {highlights.map((item, index) => (
+
+            <article
+                key={index}
+                className={styles.thCard}
             >
 
-              <div className={styles.iconBox}>
+                {/* Image */}
 
-                <Image
-                  src={item.icon}
-                  width={55}
-                  height={55}
-                  alt={item.title}
-                />
+                <div className={styles.thImageWrap}>
 
-              </div>
+                    <Image
+                        src={item.icon}
+                        alt={item.title}
+                        fill
+                        className={styles.thImage}
+                    />
 
-              <h3>{item.title}</h3>
+                    <div className={styles.thImageOverlay}></div>
 
-              <p>{item.desc}</p>
+                </div>
 
-            </div>
+                {/* Badge */}
 
-          ))}
+                <div className={styles.thBadge}>
 
-        </div>
+                    <span>
 
-      </section>
+                        Included
 
-      {/* NEXT PART STARTS HERE */}
+                    </span>
+
+                </div>
+
+                {/* Bottom Content */}
+
+                <div className={styles.thContent}>
+
+                    <div className={styles.thContentTop}>
+
+                        <h3>
+
+                            {item.title}
+
+                        </h3>
+
+                    </div>
+
+                    <p>
+
+                        {item.desc}
+
+                    </p>
+
+                    <div className={styles.thBottom}>
+
+                        <div className={styles.thLine}></div>
+
+                        <span className={styles.thExplore}>
+
+                            Explore →
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        ))}
+
+    </div>
+
+</section>
+
+
+
+
+
 
       
       {/* ITINERARY */}
@@ -314,6 +673,8 @@ export default function AadraiForest() {
       </section>
 
 
+
+
       {/* PICKUP LOCATIONS */}
 
       <section className={styles.section}>
@@ -379,54 +740,74 @@ export default function AadraiForest() {
       </section>
 
 
-      {/* COST DETAILS */}
+     {/* COST DETAILS */}
 
-      <section className={styles.section}>
+<section className={styles.section}>
 
-        <div className={styles.titleBox}>
-          <span>Pricing</span>
-          <h2>Cost Details</h2>
-        </div>
+  <div className={styles.titleBox}>
+    <span>Pricing</span>
+    <h2>Choose Your Pickup</h2>
+  </div>
 
-        <div className={styles.priceGrid}>
+  <div className={styles.priceGrid}>
 
-          <div className={styles.priceCard}>
+    <div className={styles.priceCard}>
 
-            <small>EX PUNE</small>
+      <div className={styles.priceBadge}>EX PUNE</div>
 
-            <h3>₹1499</h3>
+      <h3>₹1499</h3>
 
-            <p>Per Person</p>
+      <p>Per Person</p>
 
-            <a
-              href="https://wa.me/917620697285"
-              className={styles.bookBtn}
-            >
-              Book Now
-            </a>
+      <div className={styles.priceLine}></div>
 
-          </div>
+      <ul className={styles.priceFeatures}>
+        <li>✔ Pickup Included</li>
+        <li>✔ Breakfast</li>
+        <li>✔ Trek Leader</li>
+      </ul>
 
-          <div className={styles.priceCard}>
+      <a
+        href="https://wa.me/917620697285"
+        className={styles.bookBtn}
+      >
+        Book Now
+      </a>
 
-            <small>EX MUMBAI</small>
+    </div>
 
-            <h3>₹1599</h3>
+    <div className={styles.priceCard}>
 
-            <p>Per Person</p>
+      <div className={styles.priceBadge}>EX MUMBAI</div>
 
-            <a
-              href="https://wa.me/917620697285"
-              className={styles.bookBtn}
-            >
-              Book Now
-            </a>
+      <h3>₹1599</h3>
 
-          </div>
+      <p>Per Person</p>
 
-        </div>
+      <div className={styles.priceLine}></div>
 
-      </section>
+      <ul className={styles.priceFeatures}>
+        <li>✔ Pickup Included</li>
+        <li>✔ Breakfast</li>
+        <li>✔ Trek Leader</li>
+      </ul>
+
+      <a
+        href="https://wa.me/917620697285"
+        className={styles.bookBtn}
+      >
+        Book Now
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
 
             {/* WHY CHOOSE US */}
 
