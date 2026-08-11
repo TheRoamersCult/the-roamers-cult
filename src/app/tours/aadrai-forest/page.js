@@ -545,199 +545,410 @@ export default function AadraiForest() {
       
       {/* ITINERARY */}
 
-      <section className={styles.section}>
+{/* ==========================================================
+                LUXURY ITINERARY SECTION
+========================================================== */}
 
-        <div className={styles.titleBox}>
-          <span>Adventure Timeline</span>
-          <h2>Trip Itinerary</h2>
-        </div>
+<section className={styles.journeySection}>
 
-        <div className={styles.timelineWrapper}>
+    <div className={styles.journeyGlow}></div>
+    <div className={styles.journeyGlowTwo}></div>
 
-          {/* DAY 1 */}
+    {/* Heading */}
 
-          <div className={styles.dayCard}>
+    <div className={styles.journeyHeading}>
 
-            <div className={styles.dayHeader}>
-              <span>DAY 1</span>
-              <h3>Reporting & Journey</h3>
-            </div>
+        <span className={styles.journeyTag}>
+            ADVENTURE TIMELINE
+        </span>
 
-            <div className={styles.timeline}>
+        <h2>
+            Your Journey Begins Here
+        </h2>
 
-              <div className={styles.timelineItem}>
-                <span>11:00 PM</span>
-                <div>
-                  <h4>Reporting</h4>
-                  <p>
-                    Meet our trek leaders at your selected pickup point.
-                    Introduction and boarding.
-                  </p>
+        <p>
+            Every hour of the Aadrai Jungle Trek has been carefully planned
+            so you can simply enjoy the experience while we take care of
+            everything else.
+        </p>
+
+    </div>
+
+    {/* Cards */}
+
+    <div className={styles.journeyGrid}>
+
+
+        {/* =======================
+                DAY 1
+        ======================== */}
+
+        <article className={styles.journeyCard}>
+
+            <div className={styles.cardTop}>
+
+                <div className={styles.dayNumber}>
+                    DAY 01
                 </div>
-              </div>
 
-              <div className={styles.timelineItem}>
-                <span>11:30 PM - 3:00 AM</span>
-                <div>
-                  <h4>Fun Journey</h4>
-                  <p>
-                    Bus games, dance, music, ice-breaking activities and
-                    meeting fellow trekkers.
-                  </p>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-          {/* DAY 2 */}
-
-          <div className={styles.dayCard}>
-
-            <div className={styles.dayHeader}>
-              <span>DAY 2</span>
-              <h3>The Aadrai Adventure</h3>
-            </div>
-
-            <div className={styles.timeline}>
-
-              <div className={styles.timelineItem}>
-                <span>4:00 AM</span>
-                <div>
-                  <h4>Freshen Up</h4>
-                  <p>
-                    Introduction, fun games and freshen up before breakfast.
-                  </p>
-                </div>
-              </div>
-
-              <div className={styles.timelineItem}>
-                <span>5:00 AM</span>
-                <div>
-                  <h4>Breakfast & Briefing</h4>
-                  <p>
-                    Trek briefing with safety instructions followed by breakfast.
-                  </p>
-                </div>
-              </div>
-
-              <div className={styles.timelineItem}>
-                <span>6:00 AM</span>
-                <div>
-                  <h4>Start Trek</h4>
-                  <p>
-                    Begin the breathtaking Aadrai Jungle Trek with waterfalls,
-                    valleys and dense forest.
-                  </p>
-                </div>
-              </div>
-
-              <div className={styles.timelineItem}>
-                <span>12:00 PM</span>
-                <div>
-                  <h4>Lunch</h4>
-                  <p>
-                    Delicious lunch at the base village.
-                  </p>
-                </div>
-              </div>
-
-              <div className={styles.timelineItem}>
-                <span>After Lunch</span>
-                <div>
-                  <h4>Return Journey</h4>
-                  <p>
-                    Start our return journey towards Pune & Mumbai with
-                    unforgettable memories.
-                  </p>
-                </div>
-              </div>
-
-              <div className={styles.timelineItem}>
-                <span>9:00 PM</span>
-                <div>
-                  <h4>Trip Ends</h4>
-                  <p>
-                    Farewell to new friends and beautiful memories.
-                  </p>
-                </div>
-              </div>
+                <h3>
+                    Reporting & Overnight Journey
+                </h3>
 
             </div>
 
-          </div>
-
-        </div>
-
-      </section>
+            <div className={styles.stepList}>
 
 
+                <div className={styles.stepItem}>
+
+                    <div className={styles.stepIcon}></div>
+
+                    <div className={styles.stepBody}>
+
+                        <span>
+                            11:00 PM
+                        </span>
+
+                        <h4>
+                            Reporting Point
+                        </h4>
+
+                        <p>
+                            Meet our trek leaders, verify your booking
+                            and board the vehicle.
+                        </p>
+
+                    </div>
+
+                </div>
 
 
-      {/* PICKUP LOCATIONS */}
+                <div className={styles.stepItem}>
 
-      <section className={styles.section}>
+                    <div className={styles.stepIcon}></div>
 
-        <div className={styles.titleBox}>
-          <span>Pickup Locations</span>
-          <h2>Pune & Mumbai Pickup Points</h2>
-        </div>
+                    <div className={styles.stepBody}>
 
-        <div className={styles.pickupGrid}>
+                        <span>
+                            11:30 PM
+                        </span>
 
-          <div className={styles.pickupCard}>
+                        <h4>
+                            Fun Journey
+                        </h4>
 
-            <h3>Pune Pickup</h3>
+                        <p>
+                            Music, games, introductions and lots of fun
+                            with fellow travellers.
+                        </p>
 
-            <ul>
+                    </div>
 
-              <li>
-                <strong>Swargate</strong>
-                <span>11:00 PM</span>
-              </li>
+                </div>
 
-              <li>
-                <strong>Shivajinagar</strong>
-                <span>11:30 PM</span>
-              </li>
 
-              <li>
-                <strong>Nashik Phata</strong>
-                <span>11:45 PM</span>
-              </li>
+            </div>
 
-              <li>
-                <strong>Chakan</strong>
-                <span>12:15 AM</span>
-              </li>
+        </article>
+
+
+
+        {/* =======================
+                DAY 2
+        ======================== */}
+
+        <article className={styles.journeyCard}>
+
+            <div className={styles.cardTop}>
+
+                <div className={styles.dayNumber}>
+                    DAY 02
+                </div>
+
+                <h3>
+                    Explore Aadrai Jungle
+                </h3>
+
+            </div>
+
+            <div className={styles.stepList}>
+
+
+                <div className={styles.stepItem}>
+
+                    <div className={styles.stepIcon}></div>
+
+                    <div className={styles.stepBody}>
+
+                        <span>04:00 AM</span>
+
+                        <h4>Freshen Up</h4>
+
+                        <p>
+                            Reach base village and get ready
+                            for the adventure.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div className={styles.stepItem}>
+
+                    <div className={styles.stepIcon}></div>
+
+                    <div className={styles.stepBody}>
+
+                        <span>05:00 AM</span>
+
+                        <h4>Breakfast</h4>
+
+                        <p>
+                            Fresh breakfast followed by safety
+                            briefing.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div className={styles.stepItem}>
+
+                    <div className={styles.stepIcon}></div>
+
+                    <div className={styles.stepBody}>
+
+                        <span>06:00 AM</span>
+
+                        <h4>Start Trek</h4>
+
+                        <p>
+                            Walk through waterfalls, forests,
+                            rivers and scenic viewpoints.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div className={styles.stepItem}>
+
+                    <div className={styles.stepIcon}></div>
+
+                    <div className={styles.stepBody}>
+
+                        <span>12:00 PM</span>
+
+                        <h4>Lunch</h4>
+
+                        <p>
+                            Enjoy delicious local lunch at the
+                            base village.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div className={styles.stepItem}>
+
+                    <div className={styles.stepIcon}></div>
+
+                    <div className={styles.stepBody}>
+
+                        <span>After Lunch</span>
+
+                        <h4>Return Journey</h4>
+
+                        <p>
+                            Leave with unforgettable memories
+                            and new friendships.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div className={styles.stepItem}>
+
+                    <div className={styles.stepIcon}></div>
+
+                    <div className={styles.stepBody}>
+
+                        <span>09:00 PM</span>
+
+                        <h4>Trip Ends</h4>
+
+                        <p>
+                            Reach home safely with amazing
+                            memories.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+{/* PICKUP LOCATIONS */}
+
+<section className={styles.pickupSection}>
+
+    <div className={styles.pickupHeading}>
+
+        <span className={styles.pickupBadge}>
+            Pickup Locations
+        </span>
+
+        <h2>
+            Pune & Mumbai Pickup Points
+        </h2>
+
+        <p>
+            Comfortable boarding points with fixed reporting timings.
+        </p>
+
+    </div>
+
+    <div className={styles.pickupWrapper}>
+
+        <div className={styles.pickupBox}>
+
+            <div className={styles.pickupTop}>
+
+                <div className={styles.pickupIcon}>
+                    📍
+                </div>
+
+                <div>
+
+                    <h3>Pune Pickup</h3>
+                    <small>Boarding Points</small>
+
+                </div>
+
+            </div>
+
+            <ul className={styles.pickupList}>
+
+                <li>
+                    <strong>Swargate</strong>
+                    <span>11:00 PM</span>
+                </li>
+
+                <li>
+                    <strong>Shivajinagar</strong>
+                    <span>11:30 PM</span>
+                </li>
+
+                <li>
+                    <strong>Nashik Phata</strong>
+                    <span>11:45 PM</span>
+                </li>
+
+                <li>
+                    <strong>Chakan</strong>
+                    <span>12:15 AM</span>
+                </li>
 
             </ul>
 
-          </div>
+        </div>
 
-          <div className={styles.pickupCard}>
+        <div className={styles.pickupBox}>
 
-            <h3>Mumbai Pickup</h3>
+            <div className={styles.pickupTop}>
 
-            <ul>
+                <div className={styles.pickupIcon}>
+                    🚍
+                </div>
 
-              <li><strong>Borivali</strong><span>09:45 PM</span></li>
-              <li><strong>Goregaon</strong><span>10:10 PM</span></li>
-              <li><strong>Andheri East</strong><span>10:30 PM</span></li>
-              <li><strong>Bandra</strong><span>10:45 PM</span></li>
-              <li><strong>Sion</strong><span>11:00 PM</span></li>
-              <li><strong>Ghatkopar</strong><span>11:10 PM</span></li>
-              <li><strong>Thane</strong><span>11:30 PM</span></li>
-              <li><strong>Kalyan</strong><span>12:15 AM</span></li>
+                <div>
+
+                    <h3>Mumbai Pickup</h3>
+                    <small>Boarding Points</small>
+
+                </div>
+
+            </div>
+
+            <ul className={styles.pickupList}>
+
+                <li>
+                    <strong>Borivali</strong>
+                    <span>09:45 PM</span>
+                </li>
+
+                <li>
+                    <strong>Goregaon</strong>
+                    <span>10:10 PM</span>
+                </li>
+
+                <li>
+                    <strong>Andheri East</strong>
+                    <span>10:30 PM</span>
+                </li>
+
+                <li>
+                    <strong>Bandra</strong>
+                    <span>10:45 PM</span>
+                </li>
+
+                <li>
+                    <strong>Sion</strong>
+                    <span>11:00 PM</span>
+                </li>
+
+                <li>
+                    <strong>Ghatkopar</strong>
+                    <span>11:10 PM</span>
+                </li>
+
+                <li>
+                    <strong>Thane</strong>
+                    <span>11:30 PM</span>
+                </li>
+
+                <li>
+                    <strong>Kalyan</strong>
+                    <span>12:15 AM</span>
+                </li>
 
             </ul>
 
-          </div>
-
         </div>
 
-      </section>
+    </div>
+
+</section>
+
+
+
+
+
+
+
 
 
      {/* COST DETAILS */}
