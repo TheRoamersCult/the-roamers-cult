@@ -1,6 +1,8 @@
 "use client";
+
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { Eye, EyeOff, Loader2, ArrowRight } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import styles from './Login.module.css';
@@ -16,15 +18,12 @@ export default function Login() {
     const formData = new FormData(e.target);
     const { email, password } = Object.fromEntries(formData);
     
-    // 1. Admin Logic: .env se match karo
     if (email === process.env.NEXT_PUBLIC_ADMIN_EMAIL && password === process.env.NEXT_PUBLIC_ADMIN_PASSWORD) {
-      // Admin ke liye session storage ya local storage mein flag set karo
       localStorage.setItem('isAdmin', 'true');
       router.push('/admin/dashboard'); 
       return;
     }
 
-    // 2. Normal User Login
     try {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) throw error;
@@ -39,26 +38,43 @@ export default function Login() {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div className={styles.heroSection}>
-          <h1 style={{fontSize: '2.5rem', color: '#d4af37'}}>MEMBER PORTAL</h1>
-          <p>Login to continue your Roamers journey.</p>
-          <button onClick={() => router.push('/signup')} className={styles.teamBtn}>
-            Sign Up <ArrowRight size={16}/>
-          </button>
+        <div className={styles.brandSide}>
+          <div className={styles.brandContent}>
+            <img src="/roamers cult BG logo.png" alt="The Roamer's Cult" className={styles.logoImg} />
+            <h2 className={styles.brandTitle}>WELCOME BACK</h2>
+            <p className={styles.brandSubtitle}>Step back into the wild. Access your member portal and continue your expedition.</p>
+          </div>
         </div>
 
-        <form className={styles.formSection} onSubmit={handleLogin}>
-          <input className={styles.input} name="email" type="email" placeholder="EMAIL" required />
-          <div className={styles.inputGroup}>
-            <input className={styles.input} name="password" type={show ? "text" : "password"} placeholder="PASSWORD" required />
-            <span className={styles.eyeIcon} onClick={() => setShow(!show)}>
-              {show ? <EyeOff size={20}/> : <Eye size={20}/>}
-            </span>
+        <div className={styles.formSide}>
+          <div className={styles.formHeader}>
+            <h1 className={styles.title}>MEMBER LOGIN</h1>
+            <p className={styles.subtitle}>Enter your credentials to access your account</p>
           </div>
-          <button className={styles.btn} type="submit" disabled={loading}>
-            {loading ? <Loader2 className="animate-spin"/> : "SIGN IN"}
-          </button>
-        </form>
+
+          <form className={styles.form} onSubmit={handleLogin}>
+            <div className={styles.inputBox}>
+              <input className={styles.inputField} name="email" type="email" placeholder=" " required />
+              <label className={styles.inputLabel}>Email Address</label>
+            </div>
+
+            <div className={styles.inputBox}>
+              <input className={styles.inputField} name="password" type={show ? "text" : "password"} placeholder=" " required />
+              <label className={styles.inputLabel}>Password</label>
+              <span className={styles.eyeBtn} onClick={() => setShow(!show)}>
+                {show ? <EyeOff size={18}/> : <Eye size={18}/>}
+              </span>
+            </div>
+
+            <button className={styles.submitBtn} type="submit" disabled={loading}>
+              {loading ? <Loader2 className="animate-spin" size={18}/> : "SIGN IN"}
+            </button>
+          </form>
+
+          <div className={styles.switchPrompt}>
+            Don't have an account? <Link href="/signup" className={styles.switchLink}>Sign Up <ArrowRight size={14}/></Link>
+          </div>
+        </div>
       </div>
     </div>
   );

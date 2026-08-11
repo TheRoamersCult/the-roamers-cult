@@ -1,6 +1,8 @@
 "use client";
+
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { Eye, EyeOff, Loader2, CheckCircle, ArrowRight } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import styles from './Signup.module.css';
@@ -21,7 +23,6 @@ export default function Signup() {
     const data = Object.fromEntries(formData);
 
     try {
-      // User sign-up with metadata (metadata trigger mein use hoga)
       const { error: authError } = await supabase.auth.signUp({
         email: data.email,
         password: data.password,
@@ -49,33 +50,65 @@ export default function Signup() {
     <div className={styles.container}>
       {success ? (
         <div className={styles.statusBox}>
-          <CheckCircle size={64} color="#d4af37" />
+          <CheckCircle size={56} color="#d4af37" />
           <h1>WELCOME TO THE CULT</h1>
+          <p>Redirecting to your dashboard...</p>
         </div>
       ) : (
         <div className={styles.wrapper}>
-          <div className={styles.hero}>
-            <h1>JOIN THE CULT</h1>
-            <button className={styles.loginSwitch} onClick={() => router.push('/login')}>
-              Already a member? Log In <ArrowRight size={16} />
-            </button>
-          </div>
-          <form onSubmit={handleSignup} className={styles.form}>
-            {errorMsg && <div className={styles.errorBanner}>{errorMsg}</div>}
-            <input name="name" placeholder="FULL NAME" required />
-            <input name="email" type="email" placeholder="EMAIL" required />
-            <input name="phone" placeholder="CONTACT" required />
-            <input name="location" placeholder="LOCATION" required />
-            <div className={styles.passContainer}>
-              <input name="password" type={show ? "text" : "password"} placeholder="PASSWORD" required />
-              <button type="button" onClick={() => setShow(!show)} className={styles.eyeBtn}>
-                {show ? <EyeOff size={20} /> : <Eye size={20} />}
-              </button>
+          <div className={styles.brandSide}>
+            <div className={styles.brandContent}>
+              <img src="/roamers cult BG logo.png" alt="The Roamer's Cult" className={styles.logoImg} />
+              <h1 className={styles.brandTitle}>JOIN THE CULT</h1>
+              <p className={styles.brandSubtitle}>Become an official member of the ultimate expedition network.</p>
+              <Link href="/login" className={styles.loginSwitch}>
+                Already a member? Log In <ArrowRight size={14} />
+              </Link>
             </div>
-            <button type="submit" disabled={loading} className={styles.submitBtn}>
-              {loading ? <Loader2 className="animate-spin" /> : "ACCESS GRANTED"}
-            </button>
-          </form>
+          </div>
+
+          <div className={styles.formSide}>
+            <div className={styles.formHeader}>
+              <h2 className={styles.title}>CREATE ACCOUNT</h2>
+              <p className={styles.subtitle}>Fill in your details to get started</p>
+            </div>
+
+            <form onSubmit={handleSignup} className={styles.form}>
+              {errorMsg && <div className={styles.errorBanner}>{errorMsg}</div>}
+              
+              <div className={styles.inputBox}>
+                <input className={styles.inputField} name="name" type="text" placeholder=" " required />
+                <label className={styles.inputLabel}>Full Name</label>
+              </div>
+
+              <div className={styles.inputBox}>
+                <input className={styles.inputField} name="email" type="email" placeholder=" " required />
+                <label className={styles.inputLabel}>Email Address</label>
+              </div>
+
+              <div className={styles.inputBox}>
+                <input className={styles.inputField} name="phone" type="tel" placeholder=" " required />
+                <label className={styles.inputLabel}>Contact Number</label>
+              </div>
+
+              <div className={styles.inputBox}>
+                <input className={styles.inputField} name="location" type="text" placeholder=" " required />
+                <label className={styles.inputLabel}>Location</label>
+              </div>
+
+              <div className={styles.inputBox}>
+                <input className={styles.inputField} name="password" type={show ? "text" : "password"} placeholder=" " required />
+                <label className={styles.inputLabel}>Password</label>
+                <button type="button" onClick={() => setShow(!show)} className={styles.eyeBtn}>
+                  {show ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              </div>
+
+              <button type="submit" disabled={loading} className={styles.submitBtn}>
+                {loading ? <Loader2 className="animate-spin" size={18} /> : "ACCESS GRANTED"}
+              </button>
+            </form>
+          </div>
         </div>
       )}
     </div>
