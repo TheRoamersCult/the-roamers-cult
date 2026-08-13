@@ -125,14 +125,16 @@ export default function HiddenWaterfall() {
           </div>
         </div>
 
-        <div className={styles.heroImageBox}>
-          <Image
-            src="/DreamyW/DW (16).jpg"
-            alt="Hidden Dreamy Waterfall"
-            fill
-            priority
-            className={styles.heroImage}
-          />
+      <div className={styles.heroImageBox}>
+<Image
+    src="/DreamyW/DW (16).jpg"
+    alt="Hidden Dreamy Waterfall"
+    fill
+    priority
+    sizes="(max-width: 768px) 94vw, 1200px"
+    className={styles.heroImage}
+  />
+
           <div className={styles.overlay}></div>
           <div className={styles.floatingBadge1}>Blue Lagoon</div>
           <div className={styles.floatingBadge2}>Waterfall</div>
@@ -224,7 +226,8 @@ export default function HiddenWaterfall() {
 
 
 
-   {/* 3. TOUR HIGHLIGHTS */}
+
+{/* 3. TOUR HIGHLIGHTS */}
 <section className={styles.thSection}>
   <div className={styles.thHeading}>
     <span className={styles.thSubtitle}>TOUR HIGHLIGHTS</span>
@@ -236,7 +239,14 @@ export default function HiddenWaterfall() {
     {highlights.map((item, index) => (
       <article key={index} className={styles.thCard}>
         <div className={styles.thImageWrap}>
-          <Image src={item.icon} alt={item.title} fill className={styles.thImage} />
+          <Image 
+            src={item.icon} 
+            alt={item.title} 
+            fill 
+            priority={index === 0}
+            sizes="(max-width: 768px) 50vw, 25vw"
+            className={styles.thImage} 
+          />
           <div className={styles.thImageOverlay}></div>
         </div>
         <div className={styles.thBadge}><span>Included</span></div>
@@ -245,7 +255,6 @@ export default function HiddenWaterfall() {
           <p>{item.desc}</p>
           <div className={styles.thBottom}>
             <div className={styles.thLine}></div>
-            {/* <span className={styles.thExplore}>Explore →</span> */}
           </div>
         </div>
       </article>
@@ -454,10 +463,10 @@ export default function HiddenWaterfall() {
   </div>
   <div className={styles.galleryGrid}>
     <div className={styles.galleryItem}>
-      <Image src="/DreamyW/DW (28).jpg" alt="Adventure Moment" fill sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 25vw" className={styles.galleryImg} />
+      <Image src="/DreamyW/DW (23).jpg" alt="Adventure Moment" fill sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 25vw" className={styles.galleryImg} />
     </div>
     <div className={styles.galleryItem}>
-      <Image src="/DreamyW/DW (31).jpg" alt="Adventure Moment" fill sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 25vw" className={styles.galleryImg} />
+      <Image src="/DreamyW/DW (22).jpg" alt="Adventure Moment" fill sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 25vw" className={styles.galleryImg} />
     </div>
     <div className={styles.galleryItem}>
       <Image src="/DreamyW/DW (4).jpg" alt="Adventure Moment" fill sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 25vw" className={styles.galleryImg} />
@@ -506,6 +515,13 @@ export default function HiddenWaterfall() {
           </div>
         </div>
       </section>
+
+
+
+
+
+
+
 
       {/* 9. FOOTER */}
       <footer className={styles.footer}>

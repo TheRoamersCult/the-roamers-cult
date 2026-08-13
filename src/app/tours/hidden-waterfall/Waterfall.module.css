@@ -109,7 +109,12 @@
   overflow: hidden;
   box-shadow: 0 15px 30px rgba(0,0,0,0.4);
 }
-.heroImage { object-fit: cover; }
+
+.heroImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 
 .floatingBadge1, .floatingBadge2, .floatingBadge3 {
   position: absolute;
@@ -488,13 +493,6 @@
     background: #DED9BE;
 }
 
-.thExplore {
-    color: #DED9BE;
-    font-size: 0.58rem;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
 /* ==========================
    RESPONSIVE MOBILE
 ========================== */
@@ -510,7 +508,7 @@
     }
 
     .thContent p {
-        display: none; /* Hide description on very small screens for clean look */
+        display: none;
     }
 
     .thContent h3 {
