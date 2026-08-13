@@ -481,7 +481,7 @@ export default function HiddenWaterfall() {
       <Image src="/DreamyW/DW (17).jpg" alt="Adventure Moment" fill sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 25vw" className={styles.galleryImg} />
     </div>
     <div className={styles.galleryItem}>
-      <Image src="/DreamyW/DW (7).jpg" alt="Adventure Moment" fill sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 25vw" className={styles.galleryImg} />
+      <Image src="/DreamyW/DW (21).jpg" alt="Adventure Moment" fill sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 25vw" className={styles.galleryImg} />
     </div>
     <div className={styles.galleryItem}>
       <Image src="/DreamyW/DW (40).jpg" alt="Adventure Moment" fill sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 25vw" className={styles.galleryImg} />
