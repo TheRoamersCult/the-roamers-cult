@@ -446,24 +446,49 @@ export default function HiddenWaterfall() {
 
 
 
-      {/* 7. GALLERY SECTION (Grid format for mobile) */}
-      <section className={styles.section}>
-        <div className={styles.titleBox}>
-          <span>Gallery</span>
-          <h2>Adventure Moments</h2>
-        </div>
-        <div className={styles.galleryGrid}>
-          <div className={styles.galleryItem}><Image src="/DreamyW/DW (28).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
-          <div className={styles.galleryItem}><Image src="/DreamyW/DW (31).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
-          <div className={styles.galleryItem}><Image src="/DreamyW/DW (4).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
-          <div className={styles.galleryItem}><Image src="/DreamyW/DW (3).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
+{/* 7. GALLERY SECTION (Grid format for mobile & desktop) */}
+<section className={styles.section}>
+  <div className={styles.titleBox}>
+    <span>Gallery</span>
+    <h2>Adventure Moments</h2>
+  </div>
+  <div className={styles.galleryGrid}>
+    <div className={styles.galleryItem}>
+      <Image src="/DreamyW/DW (28).jpg" alt="Adventure Moment" fill sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 25vw" className={styles.galleryImg} />
+    </div>
+    <div className={styles.galleryItem}>
+      <Image src="/DreamyW/DW (31).jpg" alt="Adventure Moment" fill sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 25vw" className={styles.galleryImg} />
+    </div>
+    <div className={styles.galleryItem}>
+      <Image src="/DreamyW/DW (4).jpg" alt="Adventure Moment" fill sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 25vw" className={styles.galleryImg} />
+    </div>
+    <div className={styles.galleryItem}>
+      <Image src="/DreamyW/DW (3).jpg" alt="Adventure Moment" fill sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 25vw" className={styles.galleryImg} />
+    </div>
+    <div className={styles.galleryItem}>
+      <Image src="/DreamyW/DW (14).jpg" alt="Adventure Moment" fill sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 25vw" className={styles.galleryImg} />
+    </div>
+    <div className={styles.galleryItem}>
+      <Image src="/DreamyW/DW (17).jpg" alt="Adventure Moment" fill sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 25vw" className={styles.galleryImg} />
+    </div>
+    <div className={styles.galleryItem}>
+      <Image src="/DreamyW/DW (6).jpg" alt="Adventure Moment" fill sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 25vw" className={styles.galleryImg} />
+    </div>
+    <div className={styles.galleryItem}>
+      <Image src="/DreamyW/DW (40).jpg" alt="Adventure Moment" fill sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 25vw" className={styles.galleryImg} />
+    </div>
+  </div>
+</section>
 
-                    <div className={styles.galleryItem}><Image src="/DreamyW/DW (14).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
-          <div className={styles.galleryItem}><Image src="/DreamyW/DW (17).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
-          <div className={styles.galleryItem}><Image src="/DreamyW/DW (6).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
-          <div className={styles.galleryItem}><Image src="/DreamyW/DW (40).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
-        </div>
-      </section>
+
+
+
+
+
+
+
+
+
 
       {/* 8. BOOKING CTA (Unchanged Style) */}
       <section className={styles.bookingSection}>

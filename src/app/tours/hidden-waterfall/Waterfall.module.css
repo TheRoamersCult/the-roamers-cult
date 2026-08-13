@@ -848,10 +848,70 @@
 
 
 /* GALLERY GRID (2 Columns on mobile/tablet) */
-.galleryGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-.galleryItem { position: relative; width: 100%; aspect-ratio: 1/1; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,.08); }
-.galleryImg { object-fit: cover; transition: 0.3s; }
-.galleryItem:hover .galleryImg { transform: scale(1.05); }
+.galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    width: min(1200px, 94%);
+    margin: 0 auto;
+}
+
+.galleryItem {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    background: #111;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.galleryImg {
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+}
+
+.galleryItem:hover .galleryImg {
+    transform: scale(1.08);
+    filter: saturate(1.1) brightness(1.05);
+}
+
+@media (max-width: 1024px) {
+    .galleryGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .galleryGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        width: 96%;
+    }
+    
+    .galleryItem {
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .galleryGrid {
+        gap: 8px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* BOOKING CTA (Unchanged Style) */
 .bookingSection { width: 100%; padding: 70px 0; background: url("/DreamyW/DW (22).jpg") center/cover fixed; display: flex; justify-content: center; }
