@@ -18,8 +18,8 @@ const trips = [
   // },
   {
     id: 2,
-    title: "Kalu Waterfall",
-    price: "₹1499",
+    title: "Hidden Dreamy Waterfall",
+    price: "₹1799",
     status: "LIVE BOOKING",
     image: "/Kaluwaterfall.png",
     route: "/tours/hidden-waterfall",
