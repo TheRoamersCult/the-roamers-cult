@@ -8,22 +8,22 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import styles from "./LiveTelemetry.module.css";
 
 const trips = [
-  {
-    id: 1,
-    title: "Aadrai Forest",
-    price: "₹1499 (Pune) & ₹1599 (Mumbai)",
-    status: "LIVE BOOKING",
-    image: "/aadraiBGI.png",
-    route: "/tours/aadrai-forest",
-  },
   // {
-  //   id: 2,
-  //   title: "Kalu Waterfall",
-  //   price: "₹1499",
+  //   id: 1,
+  //   title: "Aadrai Forest",
+  //   price: "₹1499 (Pune) & ₹1599 (Mumbai)",
   //   status: "LIVE BOOKING",
-  //   image: "/Kaluwaterfall.png",
-  //   route: "/tours/two",
+  //   image: "/aadraiBGI.png",
+  //   route: "/tours/aadrai-forest",
   // },
+  {
+    id: 2,
+    title: "Kalu Waterfall",
+    price: "₹1499",
+    status: "LIVE BOOKING",
+    image: "/Kaluwaterfall.png",
+    route: "/tours/hidden-waterfall",
+  },
   // {
   //   id: 3,
   //   title: "HarishchandraGad",

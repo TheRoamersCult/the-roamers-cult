@@ -1,0 +1,695 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: #050505;
+    color: #ffffff;
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+}
+
+.section {
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 60px 0;
+}
+
+/* HERO */
+.hero {
+  width: min(1180px, 94%);
+  margin: 80px auto 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+  padding: 24px;
+  background-color: #2d3a3354;
+  border-radius: 24px;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.heroContent h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  line-height: 1.1;
+  font-weight: 800;
+  color: #DED9BE;
+}
+
+.heroContent h1 span {
+  display: block;
+  margin-top: 4px;
+  color: #7ED957;
+}
+
+.heroInfo {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0;
+  color: #d6d6d6;
+  font-size: 0.85rem;
+}
+
+.heroText {
+  max-width: 480px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #bfbfbf;
+  margin-bottom: 20px;
+}
+
+.heroStats {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.statCard {
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.statCard h3 { margin: 0; font-size: 1.05rem; color: #7ED957; }
+.statCard span { font-size: 0.7rem; color: #aaa; }
+
+.heroButtons { display: flex; gap: 12px; width: 100%; }
+.heroButtons .bookBtn, .heroButtons .callBtn {
+  flex: 1;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.heroButtons .bookBtn { background: #DED9BE; color: #111; }
+.heroButtons .callBtn { border: 1px solid #444; color: #fff; background: rgba(255,255,255,0.05); }
+
+.heroImageBox {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+.heroImage { object-fit: cover; }
+
+.floatingBadge1, .floatingBadge2, .floatingBadge3 {
+  position: absolute;
+  z-index: 5;
+  padding: 6px 12px;
+  border-radius: 16px;
+  background: #DED9BE;
+  color: #111;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.floatingBadge1 { top: 15px; left: 15px; }
+.floatingBadge2 { top: 15px; right: 15px; }
+.floatingBadge3 { bottom: 15px; right: 15px; }
+
+.heroCard {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  width: 85%;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(16, 16, 16, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+}
+.heroCard h3 { margin: 4px 0; font-size: 1rem; }
+.heroCard p { font-size: 0.75rem; line-height: 1.3; opacity: 0.8; margin: 0 0 10px; }
+
+.cardBottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+.cardItem { background: rgba(0,0,0,0.3); padding: 6px; border-radius: 8px; text-align: center; }
+.cardItem strong { display: block; font-size: 0.8rem; }
+.cardItem span { font-size: 0.6rem; color: #ccc; }
+
+
+
+
+
+
+
+
+
+
+/* Upcoming Batches */
+
+.batchSection {
+    width: min(1050px, 94%);
+    margin: 20px auto;
+}
+
+.batchHeading {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.batchHeading h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+.batchHeading p {
+    font-size: 11px;
+    color: #b7c2bb;
+}
+
+.batchGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.batchCard {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: #171d1a;
+    border: 1px solid rgba(255, 255, 255, .06);
+    transition: .2s ease;
+}
+
+.batchCard:hover {
+    border-color: #DED9BE55;
+    transform: translateY(-2px);
+}
+
+.popular {
+    border-color: #DED9BE;
+}
+
+.batchDate {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: #DED9BE;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #111;
+}
+
+.batchDate span {
+    font-size: 7px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.batchDate strong {
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 800;
+}
+
+.batchInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.batchInfo h4 {
+    color: #fff;
+    font-size: 11px;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 700;
+}
+
+.batchMeta {
+    font-size: 9px;
+    color: #aab7ae;
+}
+
+.batchRight {
+    display: flex;
+    align-items: center;
+}
+
+.batchPrice {
+    font-size: 13px;
+    font-weight: 800;
+    color: #DED9BE;
+}
+
+.bottomBookWrapper {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+}
+
+.singleBookBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    height: 38px;
+    border-radius: 8px;
+    background: #DED9BE;
+    color: #111;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: .2s ease;
+}
+
+.singleBookBtn:hover {
+    background: #f1ecd0;
+    transform: translateY(-1px);
+}
+
+@media(max-width: 550px) {
+    .batchSection {
+        width: 96%;
+        margin: 16px auto;
+    }
+
+    .batchGrid {
+        gap: 6px;
+    }
+
+    .batchCard {
+        padding: 8px 10px;
+        gap: 6px;
+        border-radius: 8px;
+    }
+
+    .batchDate {
+        width: 38px;
+        height: 38px;
+        border-radius: 6px;
+    }
+
+    .batchDate strong {
+        font-size: 13px;
+    }
+
+    .batchInfo h4 {
+        font-size: 10px;
+    }
+
+    .batchMeta {
+        font-size: 8px;
+    }
+
+    .batchPrice {
+        font-size: 12px;
+    }
+
+    .singleBookBtn {
+        height: 34px;
+        font-size: 10px;
+    }
+}
+
+/* Upcoming Batches */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================
+   TOUR HIGHLIGHTS SECTION
+========================== */
+
+.thSection {
+    position: relative;
+    width: min(1200px, 94%);
+    margin: 40px auto;
+}
+
+.thHeading {
+    width: min(600px, 100%);
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+.thSubtitle {
+    display: inline-flex;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .06);
+    color: #DED9BE;
+    font-size: .65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.thTitle {
+    margin-top: 6px;
+    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+    font-weight: 800;
+    color: #fff;
+}
+
+.thDescription {
+    margin-top: 4px;
+    color: #b9c3bc;
+    font-size: 0.82rem;
+}
+
+/* STRICT 4 COLUMNS DESKTOP, 2 COLUMNS MOBILE */
+.thGrid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.thCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #161c19;
+    border: 1px solid rgba(255, 255, 255, .06);
+    transition: transform .25s ease, border-color .25s ease;
+}
+
+.thCard:hover {
+    transform: translateY(-4px);
+    border-color: rgba(222, 217, 190, .3);
+}
+
+.thImageWrap {
+    position: absolute;
+    inset: 0;
+}
+
+.thImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+
+.thCard:hover .thImage {
+    transform: scale(1.06);
+}
+
+.thImageOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 20%, rgba(0, 0, 0, .85) 100%);
+}
+
+.thBadge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 10;
+}
+
+.thBadge span {
+    padding: 3px 7px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .15);
+    font-size: .5rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.thContent {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 10;
+}
+
+.thContent h3 {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.thContent p {
+    color: rgba(255, 255, 255, .75);
+    font-size: 0.7rem;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.thBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6px;
+}
+
+.thLine {
+    width: 24px;
+    height: 2px;
+    background: #DED9BE;
+}
+
+.thExplore {
+    color: #DED9BE;
+    font-size: 0.58rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* ==========================
+   RESPONSIVE MOBILE
+========================== */
+@media (max-width: 768px) {
+    .thGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .thCard {
+        height: 170px;
+        border-radius: 12px;
+    }
+
+    .thContent p {
+        display: none; /* Hide description on very small screens for clean look */
+    }
+
+    .thContent h3 {
+        font-size: 0.85rem;
+    }
+}
+
+/* ==========================
+   TOUR HIGHLIGHTS SECTION
+========================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ITINERARY JOURNEY */
+.journeySection { position: relative; width: min(1100px, 92%); margin: 50px auto; padding: 10px 0; }
+.journeyHeading { text-align: center; max-width: 600px; margin: 0 auto 30px; }
+.journeyTag {
+    display: inline-flex;
+    padding: 5px 14px;
+    border-radius: 50px;
+    background: rgba(133,170,86,.1);
+    color:#CAD8A9;
+    font-size:.65rem;
+    font-weight:700;
+    text-transform:uppercase;
+}
+.journeyHeading h2 { margin: 10px 0 0; font-size: 1.8rem; font-weight: 800; color: #F5F0DF; }
+.journeyHeading p { margin-top: 8px; color: #B9BBB4; font-size: .85rem; }
+
+.journeyGrid { display: grid; grid-template-columns: repeat(2, minmax(260px, 1fr)); gap: 16px; }
+.journeyCard {
+    padding: 18px;
+    border-radius: 18px;
+    background: #151815;
+    border: 1px solid rgba(255,255,255,.05);
+}
+.cardTop { margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,.04); }
+.dayNumber {
+    display: inline-flex;
+    padding: 5px 12px;
+    border-radius: 30px;
+    background: linear-gradient(180deg, #ECE3C7, #D8C48B);
+    color: #111;
+    font-size: .6rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+.cardTop h3 { color: #F4EFDD; font-size: 1.05rem; font-weight: 700; }
+
+.stepList { position: relative; display: flex; flex-direction: column; gap: 10px; padding-left: 20px; }
+.stepList::before { content: ""; position: absolute; top: 4px; bottom: 4px; left: 6px; width: 2px; background: #8BAE63; }
+.stepItem { position: relative; display: flex; flex-direction: column; gap: 2px; }
+.stepIcon { position: absolute; left: -21px; top: 3px; width: 10px; height: 10px; border-radius: 50%; background: #F2E7C7; border: 2px solid #151815; }
+.stepBody span { color: #9EC67A; font-size: .65rem; font-weight: 700; }
+.stepBody h4 { color: #F4EFDD; font-size: .85rem; font-weight: 700; }
+.stepBody p { color: #B8BAB3; font-size: .75rem; line-height: 1.5; }
+
+/* PICKUP SECTION */
+.pickupSection { width: min(1050px, 94%); margin: 50px auto; }
+.pickupHeading { text-align: center; margin-bottom: 30px; }
+.pickupBadge {
+    display: inline-flex;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(212,175,55,.1);
+    color: #d4af37;
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.pickupHeading h2 { margin: 10px 0 6px; font-size: 2rem; color: #fff; font-weight: 800; }
+.pickupHeading p { color: rgba(255,255,255,.7); font-size: 0.85rem; }
+
+.pickupBox {
+    background: linear-gradient(180deg,#173c23,#102717);
+    border: 1px solid rgba(212,175,55,.15);
+    border-radius: 16px;
+    padding: 20px;
+}
+.pickupTop { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.pickupIcon { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: #d4af37; color: #17361d; font-size: 1.1rem; }
+.pickupTop h3 { margin: 0; color: #fff; font-size: 1.1rem; }
+.pickupTop small { color: rgba(255,255,255,.6); font-size: .78rem; }
+
+.pickupList { list-style: none; padding: 0; margin: 0; }
+.pickupList li { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+.pickupList li:last-child { border-bottom: none; }
+.pickupList li strong { color: #fff; font-size: .88rem; display: flex; align-items: center; gap: 6px; }
+.pickupList li strong::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: #d4af37; }
+.pickupList li span { padding: 4px 10px; border-radius: 999px; background: rgba(212,175,55,.1); color: #f4d36d; font-size: .78rem; font-weight: 700; }
+
+/* PRICING & FEATURES */
+.titleBox { text-align: center; margin-bottom: 24px; }
+.titleBox span { color: #d4af37; text-transform: uppercase; font-size: .75rem; font-weight: 700; letter-spacing: 1px; }
+.titleBox h2 { color: #fff; font-size: 1.8rem; font-weight: 800; margin-top: 6px; }
+
+.priceCard {
+    background: linear-gradient(180deg,#171717,#101010);
+    border: 1px solid rgba(212,175,55,.18);
+    border-radius: 18px;
+    padding: 22px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.priceBadge {
+    display: inline-flex;
+    padding: 5px 12px;
+    background: rgba(212,175,55,.1);
+    color: #d4af37;
+    border-radius: 50px;
+    font-size: .7rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+.priceCard h3 { color: #fff; font-size: 2.2rem; margin-bottom: 6px; }
+.priceCard p { color: #bdbdbd; margin-bottom: 12px; font-size: 0.85rem; }
+.priceLine { width: 50px; height: 2px; margin: 0 auto 16px; background: #d4af37; border-radius: 10px; }
+.priceFeatures { list-style: none; padding: 0; margin: 0 0 20px; }
+.priceFeatures li { padding: 5px 0; color: #d9d9d9; font-size: .85rem; }
+
+.featureGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.featureCard { background: #101010; border: 1px solid #242424; border-radius: 16px; padding: 22px; }
+.featureCard h3 { color: #d4af37; margin-bottom: 12px; font-size: 1.05rem; }
+.featureCard p { color: #bdbdbd; font-size: .85rem; line-height: 1.6; }
+
+/* GALLERY GRID (2 Columns on mobile/tablet) */
+.galleryGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.galleryItem { position: relative; width: 100%; aspect-ratio: 1/1; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,.08); }
+.galleryImg { object-fit: cover; transition: 0.3s; }
+.galleryItem:hover .galleryImg { transform: scale(1.05); }
+
+/* BOOKING CTA (Unchanged Style) */
+.bookingSection { width: 100%; padding: 70px 0; background: url("/aadraiBGI.png") center/cover fixed; display: flex; justify-content: center; }
+.bookingCard { width: min(850px, 92%); background: rgba(15,15,15,.85); backdrop-filter: blur(12px); border: 1px solid rgba(212,175,55,.25); border-radius: 24px; padding: 40px; text-align: center; }
+.bookingCard span { color: #d4af37; text-transform: uppercase; letter-spacing: 2px; font-size: .8rem; font-weight: 700; }
+.bookingCard h2 { margin: 12px 0; font-size: 2.1rem; color: #fff; }
+.bookingCard p { max-width: 600px; margin: 0 auto 24px; color: #c7c7c7; line-height: 1.7; font-size: 0.9rem; }
+.bookingButtons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.bookingCard .bookBtn, .bookingCard .callBtn { padding: 12px 24px; border-radius: 10px; font-weight: 700; font-size: 0.88rem; text-decoration: none; transition: 0.3s; }
+.bookingCard .bookBtn { background: #d4af37; color: #000; }
+.bookingCard .callBtn { border: 1px solid #555; color: #fff; background: rgba(255,255,255,.05); }
+
+/* FOOTER */
+.footer { background: #090909; border-top: 1px solid #1b1b1b; padding: 50px 20px 20px; }
+.footerGrid { width: min(1100px, 92%); margin: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+.footer h3, .footer h4 { color: #d4af37; margin-bottom: 12px; font-size: 1rem; }
+.footer p, .footer a { display: block; color: #bdbdbd; text-decoration: none; margin-bottom: 6px; font-size: .85rem; }
+.footer a:hover { color: #d4af37; }
+.copy { text-align: center; margin-top: 30px; padding-top: 16px; border-top: 1px solid #1f1f1f; color: #7a7a7a; font-size: .8rem; }
+
+/* RESPONSIVE MEDIA QUERIES (Mobile Grid Strictness) */
+@media (max-width: 992px) {
+  .hero { grid-template-columns: 1fr; text-align: center; }
+  .heroContent { align-items: center; }
+  /* .thGrid { grid-template-columns: repeat(2, 1fr); gap: 10px; } */
+  .journeyGrid { grid-template-columns: 1fr; }
+  .galleryGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .hero { margin: 50px auto 20px; padding: 16px; }
+  /* .batchGrid { grid-template-columns: 1fr; } */
+  .heroCard { display: none; }
+  .bookingCard { padding: 25px 16px; }
+  .bookingCard h2 { font-size: 1.6rem; }
+  /* .thCard { height: 190px; } */
+}
