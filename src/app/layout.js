@@ -8,6 +8,17 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata = {
   title: "The Roamer's Cult",
   description: "Where experiences are greater than itineraries.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+    other: [
+      {
+        rel: "apple-touch-icon-precomposed",
+        url: "/apple-icon.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
