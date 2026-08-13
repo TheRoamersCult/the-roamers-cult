@@ -46,32 +46,32 @@ const batches = [
 
 const highlights = [
   {
-    icon: "/aadrai/aadrai (17).jpg",
+    icon: "/DreamyW/DW (21).jpg",
     title: "Scenic Monsoon Trek",
     desc: "Lush green trails and misty weather."
   },
   {
-    icon: "/aadrai/aadrai (14).png",
+    icon: "/DreamyW/DW (22).jpg",
     title: "Hidden Blue Lagoon",
     desc: "Crystal clear blue lagoon water dip."
   },
   {
-    icon: "/aadrai/aadrai (11).jpg",
+    icon: "/aadrai/aadrai (14).png",
     title: "Breakfast & Lunch",
     desc: "Healthy breakfast and local lunch."
   },
   {
     icon: "/aadrai/aadrai (15).jpg",
     title: "Pune Pickup & Drop",
-    desc: "Comfortable AC bus transportation."
+    desc: "Comfortable bus transportation."
   },
   {
-    icon: "/aadrai/aadrai (18).jpg",
+    icon: "/DreamyW/DW (39).jpg",
     title: "Content Creator",
     desc: "Professional photos and video shoot."
   },
   {
-    icon: "/aadrai/aadrai (16).jpg",
+    icon: "/DreamyW/DW (4).jpg",
     title: "Dreamy Waterfall",
     desc: "Stunning hidden waterfalls to explore."
   }
@@ -127,7 +127,7 @@ export default function HiddenWaterfall() {
 
         <div className={styles.heroImageBox}>
           <Image
-            src="/aadraiBGI.png"
+            src="/DreamyW/DW (16).jpg"
             alt="Hidden Dreamy Waterfall"
             fill
             priority
@@ -245,7 +245,7 @@ export default function HiddenWaterfall() {
           <p>{item.desc}</p>
           <div className={styles.thBottom}>
             <div className={styles.thLine}></div>
-            <span className={styles.thExplore}>Explore →</span>
+            {/* <span className={styles.thExplore}>Explore →</span> */}
           </div>
         </div>
       </article>
@@ -378,40 +378,73 @@ export default function HiddenWaterfall() {
         </div>
       </section>
 
-      {/* 6. COST DETAILS & INCLUSIONS */}
-      <section className={styles.section}>
-        <div className={styles.titleBox}>
-          <span>Pricing & Details</span>
-          <h2>Cost & Inclusions</h2>
-        </div>
-        <div className={styles.featureGrid}>
-          <div className={styles.priceCard}>
-            <div className={styles.priceBadge}>EX - PUNE</div>
-            <h3>₹1799/-</h3>
-            <p>Per Person</p>
-            <div className={styles.priceLine}></div>
-            <ul className={styles.priceFeatures}>
-              <li>✔ Pune Pickup & Drop</li>
-              <li>✔ Life Jacket & Safety Support</li>
-              <li>✔ Breakfast & Lunch</li>
-              <li>✔ Content Creator Shoot</li>
-              <li>✔ Trek Leader Expertise</li>
-            </ul>
-            <Link href="https://wa.me/917620697285" className={styles.bookBtnRect}>
-              Book Now
-            </Link>
-          </div>
-          <div className={styles.featureCard}>
-            <h3>✅ Inclusions & ❌ Exclusions</h3>
-            <ul className={styles.priceFeatures} style={{ textAlign: "left" }}>
-              <li>• <strong>Inc:</strong> Creator shoot, AC Bus, Life jacket, Meals</li>
-              <li>• <strong>Exc:</strong> Personal water bottles, extra snacks</li>
-              <li>• <strong>Safety:</strong> First aid & forest permissions included</li>
-              <li>• <strong>Refund:</strong> Standard cancellation policy applies</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+
+
+
+
+
+
+
+
+
+
+{/* 6. COST DETAILS & INCLUSIONS */}
+<section className={styles.pricingSection}>
+  <div className={styles.pricingHeading}>
+    <span className={styles.pricingSubtitle}>Pricing & Details</span>
+    <h2>Cost & Inclusions</h2>
+  </div>
+
+  <div className={styles.pricingGrid}>
+    {/* Price Card */}
+    <div className={styles.priceCard}>
+      <div className={styles.priceBadge}>EX - PUNE</div>
+      <div className={styles.priceAmount}>₹1799<span>/person</span></div>
+      <div className={styles.priceDivider}></div>
+      <ul className={styles.featureList}>
+        <li>✓ Pune Pickup & Drop</li>
+        <li>✓ Life Jacket & Safety Support</li>
+        <li>✓ Breakfast & Lunch</li>
+        <li>✓ Content Creator Shoot</li>
+        <li>✓ Trek Leader Expertise</li>
+      </ul>
+      <Link href="https://wa.me/917620697285" className={styles.ppricingBookBtn}>
+        Book This Batch
+      </Link>
+    </div>
+
+    {/* Inclusions & Details Card */}
+    <div className={styles.detailsCard}>
+      <div className={styles.detailsCardHeader}>
+        <h3>Quick Overview</h3>
+        <span className={styles.secureBadge}>100% Safe</span>
+      </div>
+      <div className={styles.detailItem}>
+        <strong>Includes:</strong>
+        <p>Creator shoot, AC Bus, Life jacket, Meals</p>
+      </div>
+      <div className={styles.detailItem}>
+        <strong>Excludes:</strong>
+        <p>Personal water bottles, extra snacks</p>
+      </div>
+      <div className={styles.detailItem}>
+        <strong>Safety & Policy:</strong>
+        <p>First aid & forest permissions included. Standard cancellation policy applies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+   {/* 6. COST DETAILS & INCLUSIONS */}
+
+
+
+
+
+
+
+
+
+
 
       {/* 7. GALLERY SECTION (Grid format for mobile) */}
       <section className={styles.section}>
@@ -420,10 +453,15 @@ export default function HiddenWaterfall() {
           <h2>Adventure Moments</h2>
         </div>
         <div className={styles.galleryGrid}>
-          <div className={styles.galleryItem}><Image src="/aadraiBGI.png" alt="Gallery" fill className={styles.galleryImg} /></div>
-          <div className={styles.galleryItem}><Image src="/aadrai/aadrai (1).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
-          <div className={styles.galleryItem}><Image src="/aadrai/aadrai (2).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
-          <div className={styles.galleryItem}><Image src="/aadrai/aadrai (3).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
+          <div className={styles.galleryItem}><Image src="/DreamyW/DW (28).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
+          <div className={styles.galleryItem}><Image src="/DreamyW/DW (31).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
+          <div className={styles.galleryItem}><Image src="/DreamyW/DW (4).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
+          <div className={styles.galleryItem}><Image src="/DreamyW/DW (3).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
+
+                    <div className={styles.galleryItem}><Image src="/DreamyW/DW (14).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
+          <div className={styles.galleryItem}><Image src="/DreamyW/DW (17).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
+          <div className={styles.galleryItem}><Image src="/DreamyW/DW (6).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
+          <div className={styles.galleryItem}><Image src="/DreamyW/DW (40).jpg" alt="Gallery" fill className={styles.galleryImg} /></div>
         </div>
       </section>
 
