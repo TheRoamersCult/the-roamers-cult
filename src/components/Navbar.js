@@ -45,8 +45,12 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
-  const getPath = (item) =>
-    item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s+/g, "")}`;
+  const getPath = (item) => {
+    if (item === "Home") return "/";
+    if (item === "Our Story") return "/about";
+    if (item === "About Us") return "/about";
+    return `/${item.toLowerCase().replace(/\s+/g, "")}`;
+  };
 
   return (
     <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
@@ -62,7 +66,7 @@ export default function Navbar() {
         </Link>
 
         <nav className={styles.desktopLinks}>
-          {["Home", "Tours", "Our Story"].map((item) => (
+          {["Home", "Tours", "Our Story", "About Us"].map((item) => (
             <Link key={item} href={getPath(item)} className={styles.link}>
               {item}
             </Link>
@@ -115,7 +119,7 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: "easeInOut" }}
           >
             <div className={styles.mobileLinksWrapper}>
-              {["Home", "Tours", "Our Story"].map((item) => (
+              {["Home", "Tours", "Our Story", "Gallery"].map((item) => (
                 <Link
                   key={item}
                   href={getPath(item)}
