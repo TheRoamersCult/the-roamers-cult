@@ -47,7 +47,7 @@ export default function Navbar() {
 
   const getPath = (item) => {
     if (item === "Home") return "/";
-    if (item === "Our Story") return "/about";
+    if (item === "Our Story") return "/story";
     if (item === "About Us") return "/about";
     return `/${item.toLowerCase().replace(/\s+/g, "")}`;
   };
