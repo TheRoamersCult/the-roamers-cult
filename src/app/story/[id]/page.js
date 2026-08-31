@@ -304,7 +304,7 @@ const galleriesData = {
     title: "Hidden Dreamy Waterfall & Blue Lagoon",
     location: "Murud",
     images: [
-      { src: "/DreamyW/DW (1).jpg", caption: "The stunning blue lagoon" },
+      { src: "/DreamyW/DW (1).JPG", caption: "The stunning blue lagoon" },
       // { src: "/DreamyW/DW (2).jpg", caption: "Waterfall stream flow" },
       { src: "/DreamyW/DW (3).jpg", caption: "Greenery surroundings" },
       { src: "/DreamyW/DW (4).jpg", caption: "Explorers enjoying lagoon" },
