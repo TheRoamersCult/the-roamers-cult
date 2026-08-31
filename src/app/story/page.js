@@ -15,10 +15,10 @@ export default function OurStoryPage() {
       description: "Hidden beyond the beaten trails, our Secret Waterfall was where cliff jumps met wild adventure. By night, we camped under the stars, surrounded by forests, waterfalls, and stories worth remembering.",
       coverImage: "/secretwaterfall/secretwaterfall (1).jpg",
       gallery: [
-        "/secretwaterfall/secretwaterfall (2).jpg",
-        "/secretwaterfall/secretwaterfall (9).jpg",
-        "/secretwaterfall/secretwaterfall (6).jpg",
-        "/secretwaterfall/secretwaterfall (7).jpg"
+        "/secretwaterfall/secretwaterfall (2).JPG",
+        "/secretwaterfall/secretwaterfall (9).JPG",
+        "/secretwaterfall/secretwaterfall (6).JPG",
+        "/secretwaterfall/secretwaterfall (7).JPG"
       ]
     },
     {
