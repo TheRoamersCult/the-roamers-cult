@@ -77,6 +77,28 @@ const galleriesData = {
       { src: "/secretwaterfall/secretwaterfall (47).jpg", caption: "Morning camp vibes" },
       { src: "/secretwaterfall/secretwaterfall (48).jpg", caption: "Group bonding by the stream" },
       { src: "/secretwaterfall/secretwaterfall (49).jpg", caption: "Unexplored green patches" },
+
+                  { src: "/secretwaterfall/secretwaterfall (50).jpg", caption: "Deep forest trail leading to the secret lagoon" },
+      { src: "/secretwaterfall/secretwaterfall (51).jpg", caption: "Cliff jumping moments" },
+      { src: "/secretwaterfall/secretwaterfall (52).jpg", caption: "Morning camp vibes" },
+      { src: "/secretwaterfall/secretwaterfall (53).jpg", caption: "Group bonding by the stream" },
+      { src: "/secretwaterfall/secretwaterfall (54).jpg", caption: "Unexplored green patches" },
+      { src: "/secretwaterfall/secretwaterfall (55).jpg", caption: "Deep forest trail leading to the secret lagoon" },
+      { src: "/secretwaterfall/secretwaterfall (56).jpg", caption: "Cliff jumping moments" },
+      { src: "/secretwaterfall/secretwaterfall (57).jpg", caption: "Morning camp vibes" },
+      { src: "/secretwaterfall/secretwaterfall (58).jpg", caption: "Group bonding by the stream" },
+      { src: "/secretwaterfall/secretwaterfall (59).jpg", caption: "Unexplored green patches" },
+
+                  { src: "/secretwaterfall/secretwaterfall (60).jpg", caption: "Deep forest trail leading to the secret lagoon" },
+      { src: "/secretwaterfall/secretwaterfall (61).jpg", caption: "Cliff jumping moments" },
+      { src: "/secretwaterfall/secretwaterfall (62).jpg", caption: "Morning camp vibes" },
+      { src: "/secretwaterfall/secretwaterfall (63).jpg", caption: "Group bonding by the stream" },
+      { src: "/secretwaterfall/secretwaterfall (64).jpg", caption: "Unexplored green patches" },
+      { src: "/secretwaterfall/secretwaterfall (65).jpg", caption: "Deep forest trail leading to the secret lagoon" },
+      { src: "/secretwaterfall/secretwaterfall (66).jpg", caption: "Cliff jumping moments" },
+      { src: "/secretwaterfall/secretwaterfall (67).jpg", caption: "Morning camp vibes" },
+      { src: "/secretwaterfall/secretwaterfall (68).jpg", caption: "Group bonding by the stream" },
+      { src: "/secretwaterfall/secretwaterfall (69).jpg", caption: "Unexplored green patches" },
     ],
   },
   rajmachi: {
@@ -182,7 +204,7 @@ export default function GalleryPage({ params }) {
       <main className={styles.page}>
         <header className={styles.header}>
           <div className={styles.headerTop}>
-            <Link href="/story" className={styles.backBtn}>
+            {/* <Link href="/story" className={styles.backBtn}>
               <ArrowLeft size={15} />
               <span>Back to Stories</span>
             </Link>
@@ -190,7 +212,7 @@ export default function GalleryPage({ params }) {
             <div className={styles.badge}>
               <Sparkles size={11} />
               <span>Official Visual Archive</span>
-            </div>
+            </div> */}
           </div>
 
           <div className={styles.heading}>
