@@ -34,7 +34,7 @@ const galleriesData = {
       { src: "/secretwaterfall/secretwaterfall (8).JPG", caption: "Group bonding by the stream" },
       { src: "/secretwaterfall/secretwaterfall (9).JPG", caption: "Unexplored green patches" },
 
-            { src: "/secretwaterfall/secretwaterfall (10).jpg", caption: "Deep forest trail leading to the secret lagoon" },
+            { src: "/secretwaterfall/secretwaterfall (10).JPG", caption: "Deep forest trail leading to the secret lagoon" },
       { src: "/secretwaterfall/secretwaterfall (11).jpg", caption: "Cliff jumping moments" },
       { src: "/secretwaterfall/secretwaterfall (12).jpg", caption: "Morning camp vibes" },
       { src: "/secretwaterfall/secretwaterfall (13).jpg", caption: "Group bonding by the stream" },
