@@ -53,7 +53,7 @@ export default function ToursPage() {
       location: "West Bengal",
       duration: "1 Days / 1 Nights",
       price: "₹1,399",
-      image: "/secretwaterfall/secretwaterfall (1).JPG",
+      image: "/secretwaterfall/secretwaterfall (1).jpg",
       memories: "300+ Explorers",
     },
     {
