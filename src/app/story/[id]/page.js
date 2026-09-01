@@ -483,7 +483,7 @@ const galleriesData = {
     images: [
       { src: "/harishchandragad/harishc (1).jpg", caption: "Konkan Kada breathtaking cliff view" },
       { src: "/harishchandragad/harishc (2).jpg", caption: "Trekking towards the peak" },
-            { src: "/harishchandragad/harishc (2.2).jpg", caption: "Trekking towards the peak" },
+      { src: "/harishchandragad/harishc (2.2).jpg", caption: "Trekking towards the peak" },
       { src: "/harishchandragad/harishc (3).jpg", caption: "Ancient rock-cut caves" },
       { src: "/harishchandragad/harishc (4).JPG", caption: "Sunset from the fort" },
       { src: "/harishchandragad/harishc (5).JPG", caption: "Summit celebration" },

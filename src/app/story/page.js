@@ -96,8 +96,8 @@ export default function OurStoryPage() {
       coverImage: "/harishchandragad/harishc (34).jpg",
       gallery: [
         "/harishchandragad/harishc (36).jpg",
-        "/harishchandragad/harishc (19).jpg",
-        "/harishchandragad/harishc (7).jpg",
+        "/harishchandragad/harishc (19).JPG",
+        "/harishchandragad/harishc (7).JPG",
         "/harishchandragad/harishc (37).jpg"
       ]
     }
