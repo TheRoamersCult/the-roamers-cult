@@ -72,7 +72,7 @@ const featuredStories = [
     location: "Malshej Ghat",
     desc: "Iconic fort, historic caves, and Konkan Kada.",
     images: [
-      "/harishchandragad/harishc (34).jpg",
+      "/harishchandragad/harishc (34).JPG",
       "/harishchandragad/harishc (36).jpg",
       "/harishchandragad/harishc (19).JPG",
       "/harishchandragad/harishc (7).JPG",
