@@ -119,7 +119,7 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: "easeInOut" }}
           >
             <div className={styles.mobileLinksWrapper}>
-              {["Home", "Tours", "Our Story", "Gallery"].map((item) => (
+              {["Home", "Tours", "Our Story", "About Us"].map((item) => (
                 <Link
                   key={item}
                   href={getPath(item)}
