@@ -119,7 +119,7 @@ export default function OurStoryPage() {
               <Sparkles size={12} /> THE ROAMERS ARCHIVES
             </span>
             <h1>
-              Our Story & <span>Memories</span>
+              Our Journey & <span>Memories</span>
             </h1>
             <p>Immersive visual logs and separate photo galleries from our successfully completed expeditions.</p>
           </div>
@@ -171,7 +171,7 @@ export default function OurStoryPage() {
           <div className={styles.footerLinks}>
             <h4>Quick Links</h4>
             <Link href="/tours">All Tours</Link>
-            <Link href="/story">Our Stories</Link>
+            <Link href="/story">Our Journey</Link>
             <Link href="/about">About Us</Link>
             <Link href="/contact">Contact</Link>
           </div>

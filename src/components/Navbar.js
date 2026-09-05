@@ -47,7 +47,7 @@ export default function Navbar() {
 
   const getPath = (item) => {
     if (item === "Home") return "/";
-    if (item === "Our Story") return "/story";
+    if (item === "Our Journey") return "/story";
     if (item === "About Us") return "/about";
     return `/${item.toLowerCase().replace(/\s+/g, "")}`;
   };
@@ -66,7 +66,7 @@ export default function Navbar() {
         </Link>
 
         <nav className={styles.desktopLinks}>
-          {["Home", "Tours", "Our Story", "About Us"].map((item) => (
+          {["Home", "Tours", "Our Journey", "About Us"].map((item) => (
             <Link key={item} href={getPath(item)} className={styles.link}>
               {item}
             </Link>
@@ -93,10 +93,16 @@ export default function Navbar() {
 
           <span className={styles.divider}></span>
 
-          <button className={styles.bookBtn}>
+          {/* <button className={styles.bookBtn}>
             <span className={styles.btnTextDesktop}>Book Experience</span>
             <span className={styles.btnTextMobile}>Book</span>
-          </button>
+          </button> */}
+          <Link href="/booking">
+  <button className={styles.bookBtn}>
+    <span className={styles.btnTextDesktop}>Book Experience</span>
+    <span className={styles.btnTextMobile}>Book</span>
+  </button>
+</Link>
 
           <button
             className={`${styles.hamburger} ${isOpen ? styles.hamburgerActive : ""}`}
@@ -119,7 +125,7 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: "easeInOut" }}
           >
             <div className={styles.mobileLinksWrapper}>
-              {["Home", "Tours", "Our Story", "About Us"].map((item) => (
+              {["Home", "Tours", "Our Journey", "About Us"].map((item) => (
                 <Link
                   key={item}
                   href={getPath(item)}

@@ -11,6 +11,7 @@ const featuredStories = [
     title: "Secret Waterfall",
     location: "Gokundi",
     desc: "Hidden trails, cliff jumps, and starlit camps.",
+    route: "/story/secret-waterfall", 
     images: [
       "/secretwaterfall/secretwaterfall (1).jpg",
       "/secretwaterfall/secretwaterfall (2).JPG",
@@ -23,6 +24,7 @@ const featuredStories = [
     title: "Rajmachi Fireflies",
     location: "Lonavala",
     desc: "Magical glowing trails under the nocturnal canopy.",
+    route: "/story/rajmachi",
     images: [
       "/rajmachi/rajmachi (1).jpg",
       "/rajmachi/rajmachi (2).jpg",
@@ -35,6 +37,7 @@ const featuredStories = [
     title: "Kalu Waterfall",
     location: "Malshej Ghat",
     desc: "Spectacular multi-tier falls and rugged terrain.",
+    route: "/story/kalu",
     images: [
       "/kalu/kalu (1).jpg",
       "/kalu/kalu (2).jpg",
@@ -47,6 +50,7 @@ const featuredStories = [
     title: "Aadrai Forest",
     location: "Malshej Ghat",
     desc: "Dense forest trekking trail with lush green canopies.",
+    route: "/story/aadrai",
     images: [
       "/aadrai/aadrai (1).jpg",
       "/aadrai/aadrai (2).jpg",
@@ -59,6 +63,7 @@ const featuredStories = [
     title: "Dreamy Waterfall & Lagoon",
     location: "Murud",
     desc: "Hidden gem leading to a natural blue lagoon.",
+    route: "/story/dreamy-waterfall",
     images: [
       "/DreamyW/DW (3).jpg",
       "/DreamyW/DW (22).jpg",
@@ -71,6 +76,7 @@ const featuredStories = [
     title: "Harishchandragad",
     location: "Malshej Ghat",
     desc: "Iconic fort, historic caves, and Konkan Kada.",
+    route: "/story/harishchandragad",
     images: [
       "/harishchandragad/harishc (34).JPG",
       "/harishchandragad/harishc (36).jpg",
@@ -133,7 +139,7 @@ export default function StoryPreviews() {
                 </div>
                 <h3>{story.title}</h3>
                 <p>{story.desc}</p>
-                <Link href={`/story/#${story.id}`} className={styles.actionBtn}>
+                <Link href={story.route} className={styles.actionBtn}>
                   <span>Open Full Gallery</span>
                   <ArrowRight size={13} />
                 </Link>

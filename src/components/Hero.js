@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Link from 'next/link';
 import styles from "./Hero.module.css";
 
 const premiumFadeUp = {
@@ -102,8 +103,14 @@ export default function Hero() {
             animate="visible"
             custom={0.4}
           >
-            <button className={styles.primaryBtn}>Start Journey</button>
-            <button className={styles.secondaryBtn}>View Trips</button>
+            {/* <button className={styles.primaryBtn}> */}
+            <Link href="/tours"><button className={styles.primaryBtn}>Start Journey</button>
+                  
+                </Link>
+            {/* <button className={styles.secondaryBtn}>View Trips</button> */}
+            {/* <Link href="/tours">
+  <button className={styles.secondaryBtn}>View Trips</button>
+</Link> */}
           </motion.div>
 
           <motion.div
