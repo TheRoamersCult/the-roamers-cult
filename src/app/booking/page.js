@@ -227,7 +227,7 @@ export default function BookingPage() {
       </Suspense>
 
       <footer className={styles.footer}>
-        <p>&copy; {new Date().getFullYear()} Sahyadri Expeditions. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} The Roamers Cult. All rights reserved.</p>
       </footer>
     </main>
   );
