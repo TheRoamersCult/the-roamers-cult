@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Calendar, Users, MapPin, CheckCircle, MessageCircle, ShieldCheck, Clock, Sparkles, Utensils, HeartPulse, User } from "lucide-react";
 import styles from "./booking.module.css";
@@ -32,7 +32,7 @@ const toursData = {
   },
 };
 
-export default function BookingPage() {
+function BookingContent() {
   const searchParams = useSearchParams();
   const tourKey = searchParams.get("tour") || "hidden-waterfall";
   const selectedTour = toursData[tourKey] || toursData["hidden-waterfall"];
@@ -43,7 +43,7 @@ export default function BookingPage() {
   const [age, setAge] = useState("");
   const [mealPref, setMealPref] = useState("Veg");
   const [medicalCondition, setMedicalCondition] = useState("");
-  const [pickupPoint, setPickupPoint] = useState("Pune");
+  const [pickupPoint, setPickupPoint] = useState("Shivajinagar Metro Station");
   const [error, setError] = useState("");
 
   const totalPrice = selectedTour.pricePerHead * ticketCount;
@@ -80,153 +80,151 @@ export default function BookingPage() {
   };
 
   return (
-    <main className={styles.mainContainer}>
-      <div className={styles.bookingWrapper}>
-        <div className={styles.tourSummaryCard}>
-          <div className={styles.imgBox}>
-            <img src={selectedTour.image} alt={selectedTour.title} />
-            <span className={styles.badge}><Sparkles size={12} /> Live Active Batch</span>
+    <div className={styles.bookingWrapper}>
+      <div className={styles.tourSummaryCard}>
+        <div className={styles.imgBox}>
+          <img src={selectedTour.image} alt={selectedTour.title} />
+          <span className={styles.badge}><Sparkles size={12} /> Live Active Batch</span>
+        </div>
+        <div className={styles.summaryContent}>
+          <h2>{selectedTour.title}</h2>
+          <p className={styles.location}><MapPin size={14} /> {selectedTour.location}</p>
+          
+          <div className={styles.highlightsRow}>
+            <span><Clock size={14} /> {selectedTour.duration}</span>
+            <span><ShieldCheck size={14} /> Verified Guide</span>
           </div>
-          <div className={styles.summaryContent}>
-            <h2>{selectedTour.title}</h2>
-            <p className={styles.location}><MapPin size={14} /> {selectedTour.location}</p>
-            
-            <div className={styles.highlightsRow}>
-              <span><Clock size={14} /> {selectedTour.duration}</span>
-              <span><ShieldCheck size={14} /> Verified Guide</span>
-            </div>
 
-            <div className={styles.priceTagBox}>
-              <span>Price per explorer</span>
-              <h3>₹{selectedTour.pricePerHead}</h3>
-            </div>
+          <div className={styles.priceTagBox}>
+            <span>Price per explorer</span>
+            <h3>₹{selectedTour.pricePerHead}</h3>
           </div>
         </div>
+      </div>
 
-        <div className={styles.formCard}>
-          <div className={styles.formHeader}>
-            <h1>Secure Live Slot</h1>
-            <p>Fill out details to instantly connect via WhatsApp.</p>
-          </div>
+      <div className={styles.formCard}>
+        <div className={styles.formHeader}>
+          <h1>Secure Live Slot</h1>
+          <p>Fill out details to instantly connect via WhatsApp.</p>
+        </div>
 
-          <form onSubmit={handleWhatsAppBooking} className={styles.form}>
-            
-            <div className={styles.rowGrid}>
-              <div className={styles.inputGroup}>
-                <label><User size={13} /> Full Name *</label>
-                <input 
-                  type="text" 
-                  placeholder="full name" 
-                  value={travelerName}
-                  onChange={(e) => setTravelerName(e.target.value)}
-                  required
-                />
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label>Age *</label>
-                <input 
-                  type="number" 
-                  placeholder="24" 
-                  value={age}
-                  onChange={(e) => setAge(e.target.value)}
-                  required
-                />
-              </div>
-            </div>
-
-            <div className={styles.rowGrid}>
-              <div className={styles.inputGroup}>
-                <label><Utensils size={13} /> Meal Preference</label>
-                <select 
-                  value={mealPref} 
-                  onChange={(e) => setMealPref(e.target.value)}
-                  className={styles.selectInput}
-                >
-                  <option value="Veg">Vegetarian</option>
-                  <option value="Non-Veg">Non-Vegetarian</option>
-                  <option value="Jain">Jain Meal</option>
-                </select>
-              </div>
-
-              <div className={styles.inputGroup}>
-                <label>Pickup Location</label>
-                <select 
-                  value={pickupPoint} 
-                  onChange={(e) => setPickupPoint(e.target.value)}
-                  className={styles.selectInput}
-                >
-                  <option value="Shivajinagar Metro Station">Shivajinagar Metro Station  </option>
-                  <option value="Aundh police line bus stop">Aundh police line bus stop </option>
-                  <option value="Wakad Shani Mandir">Wakad Shani Mandir </option>
-                  <option value="Chandni Chowk">Chandni Chowk</option>
-                  {/* <option value="Pune">Aundh police line bus stop </option>
-                  <option value="Direct Spot">Direct at Base Village</option> */}
-                </select>
-              </div>
-            </div>
-
+        <form onSubmit={handleWhatsAppBooking} className={styles.form}>
+          <div className={styles.rowGrid}>
             <div className={styles.inputGroup}>
-              <label><HeartPulse size={13} /> Medical Conditions / Allergies</label>
+              <label><User size={13} /> Full Name *</label>
               <input 
                 type="text" 
-                placeholder="Mention any issues (Asthma, Vertigo, etc. or None)" 
-                value={medicalCondition}
-                onChange={(e) => setMedicalCondition(e.target.value)}
+                placeholder="full name" 
+                value={travelerName}
+                onChange={(e) => setTravelerName(e.target.value)}
+                required
               />
             </div>
 
             <div className={styles.inputGroup}>
-              <label><Calendar size={13} /> Select Live Batch Date</label>
-              <div className={styles.dateGrid}>
-                {selectedTour.dates.map((date) => (
-                  <button
-                    type="button"
-                    key={date}
-                    className={`${styles.dateBtn} ${selectedDate === date ? styles.activeDate : ""}`}
-                    onClick={() => setSelectedDate(date)}
-                  >
-                    {date}
-                  </button>
-                ))}
-              </div>
+              <label>Age *</label>
+              <input 
+                type="number" 
+                placeholder="24" 
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+                required
+              />
+            </div>
+          </div>
+
+          <div className={styles.rowGrid}>
+            <div className={styles.inputGroup}>
+              <label><Utensils size={13} /> Meal Preference</label>
+              <select 
+                value={mealPref} 
+                onChange={(e) => setMealPref(e.target.value)}
+                className={styles.selectInput}
+              >
+                <option value="Veg">Vegetarian</option>
+                <option value="Non-Veg">Non-Vegetarian</option>
+                <option value="Jain">Jain Meal</option>
+              </select>
             </div>
 
             <div className={styles.inputGroup}>
-              <label><Users size={13} /> Number of Explorers</label>
-              <div className={styles.counterRow}>
-                <button 
-                  type="button" 
-                  onClick={() => setTicketCount(Math.max(1, ticketCount - 1))}
-                >-</button>
-                <span className={styles.countDisplay}>{ticketCount}</span>
-                <button 
-                  type="button" 
-                  onClick={() => setTicketCount(ticketCount + 1)}
-                >+</button>
-              </div>
+              <label>Pickup Location</label>
+              <select 
+                value={pickupPoint} 
+                onChange={(e) => setPickupPoint(e.target.value)}
+                className={styles.selectInput}
+              >
+                <option value="Shivajinagar Metro Station">Shivajinagar Metro Station</option>
+                <option value="Aundh police line bus stop">Aundh police line bus stop</option>
+                <option value="Wakad Shani Mandir">Wakad Shani Mandir</option>
+                <option value="Chandni Chowk">Chandni Chowk</option>
+              </select>
+            </div>
+          </div>
+
+          <div className={styles.inputGroup}>
+            <label><HeartPulse size={13} /> Medical Conditions / Allergies</label>
+            <input 
+              type="text" 
+              placeholder="Mention any issues (Asthma, Vertigo, etc. or None)" 
+              value={medicalCondition}
+              onChange={(e) => setMedicalCondition(e.target.value)}
+            />
+          </div>
+
+          <div className={styles.inputGroup}>
+            <label><Calendar size={13} /> Select Live Batch Date</label>
+            <div className={styles.dateGrid}>
+              {selectedTour.dates.map((date) => (
+                <button
+                  type="button"
+                  key={date}
+                  className={`${styles.dateBtn} ${selectedDate === date ? styles.activeDate : ""}`}
+                  onClick={() => setSelectedDate(date)}
+                >
+                  {date}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.inputGroup}>
+            <label><Users size={13} /> Number of Explorers</label>
+            <div className={styles.counterRow}>
+              <button type="button" onClick={() => setTicketCount(Math.max(1, ticketCount - 1))}>-</button>
+              <span className={styles.countDisplay}>{ticketCount}</span>
+              <button type="button" onClick={() => setTicketCount(ticketCount + 1)}>+</button>
+            </div>
+          </div>
+
+          {error && <p className={styles.errorText}>{error}</p>}
+
+          <div className={styles.checkoutFooter}>
+            <div className={styles.totalBox}>
+              <span>Total Amount</span>
+              <h2>₹{totalPrice}</h2>
             </div>
 
-            {error && <p className={styles.errorText}>{error}</p>}
+            <button type="submit" className={styles.whatsappBtn}>
+              <MessageCircle size={16} /> Book via WhatsApp
+            </button>
+          </div>
 
-            <div className={styles.checkoutFooter}>
-              <div className={styles.totalBox}>
-                <span>Total Amount</span>
-                <h2>₹{totalPrice}</h2>
-              </div>
-
-              <button type="submit" className={styles.whatsappBtn}>
-                <MessageCircle size={16} /> Book via WhatsApp
-              </button>
-            </div>
-
-            <p className={styles.secureNote}>
-              <CheckCircle size={11} /> Instant confirmation on WhatsApp. No upfront online payment needed.
-            </p>
-
-          </form>
-        </div>
+          <p className={styles.secureNote}>
+            <CheckCircle size={11} /> Instant confirmation on WhatsApp. No upfront online payment needed.
+          </p>
+        </form>
       </div>
+    </div>
+  );
+}
+
+export default function BookingPage() {
+  return (
+    <main className={styles.mainContainer}>
+      <Suspense fallback={<div style={{ color: "#fff", textAlign: "center", padding: "4rem" }}>Loading booking page...</div>}>
+        <BookingContent />
+      </Suspense>
 
       <footer className={styles.footer}>
         <p>&copy; {new Date().getFullYear()} Sahyadri Expeditions. All rights reserved.</p>
